@@ -191,31 +191,21 @@
 
         <!-- Signature Section -->
         <div class="signature-section">
-            <h4>Tanda Tangan Manajer</h4>
             
             <div class="signature-form">
-                <div class="form-group">
-                    <label for="tempat">Tempat:</label>
-                    <input type="text" name="tempat" id="tempat" placeholder="Contoh: Yogyakarta" required>
+                <div class="signature-info">
+                    <input type="text" name="tempat" id="tempat" placeholder="Yogyakarta" class="signature-place" required>
+                    <span>, </span>
+                    <input type="date" name="tanggal" id="tanggal" class="signature-date" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="tanggal">Tanggal:</label>
-                    <input type="date" name="tanggal" id="tanggal" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="tanda_tangan">Upload Tanda Tangan:</label>
+                <div class="signature-upload">
+                    <label for="tanda_tangan" class="upload-label">📎 Pilih Tanda Tangan</label>
                     <input type="file" name="tanda_tangan" id="tanda_tangan" accept="image/*" required onchange="previewSignature(event)">
-                    <small>Format: JPG, PNG (Max: 2MB)</small>
                 </div>
 
-                <div class="signature-preview">
-                    <p><strong>Preview Tanda Tangan:</strong></p>
-                    <div id="preview-container" style="display: none; border: 1px solid #ddd; padding: 10px; max-width: 200px; text-align: center;">
-                        <img id="signature-preview" src="" alt="Preview Tanda Tangan" style="max-width: 100%; height: auto; max-height: 150px;">
-                    </div>
-                    <p id="preview-info" style="color: #999; font-size: 12px;">Belum ada file yang dipilih</p>
+                <div id="preview-container" style="display: none; margin-top: 20px; text-align: center;">
+                    <img id="signature-preview" src="" alt="Tanda Tangan" style="max-width: 150px; height: auto; max-height: 100px;">
                 </div>
             </div>
         </div>
@@ -284,7 +274,6 @@ function previewSignature(event) {
     const file = event.target.files[0];
     const previewContainer = document.getElementById('preview-container');
     const previewImg = document.getElementById('signature-preview');
-    const previewInfo = document.getElementById('preview-info');
 
     if (file) {
         // Validasi ukuran file
@@ -292,7 +281,6 @@ function previewSignature(event) {
             alert('Ukuran file tidak boleh lebih dari 2MB');
             event.target.value = '';
             previewContainer.style.display = 'none';
-            previewInfo.innerText = 'Belum ada file yang dipilih';
             return;
         }
 
@@ -301,7 +289,6 @@ function previewSignature(event) {
             alert('Hanya file gambar yang diperbolehkan (JPG, PNG)');
             event.target.value = '';
             previewContainer.style.display = 'none';
-            previewInfo.innerText = 'Belum ada file yang dipilih';
             return;
         }
 
@@ -310,7 +297,6 @@ function previewSignature(event) {
         reader.onload = function(e) {
             previewImg.src = e.target.result;
             previewContainer.style.display = 'block';
-            previewInfo.innerText = 'File: ' + file.name;
         };
         reader.readAsDataURL(file);
     }
