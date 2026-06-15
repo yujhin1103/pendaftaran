@@ -12,6 +12,8 @@
 
     <h2 align="center">FORM PENILAIAN PESERTA MAGANG</h2>
 
+    <a href="/manajer/penilaian" class="btn-kembali">← Kembali</a>
+
     <div class="info-peserta">
 
         <p><strong>Nama :</strong> {{ $peserta->nama_lengkap }}</p>
