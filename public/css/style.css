@@ -1,0 +1,3169 @@
+/* =====================
+   GLOBAL
+===================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Barlow Condensed', sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* =====================
+   HEADER PESERTA
+===================== */
+
+.header{
+    height:75px;
+    background:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 25px;
+
+    border-bottom:1px solid #ddd;
+}
+
+.welcome{
+    font-size:20px;
+    color:#333;
+}
+
+.logo{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo img{
+    height:45px;
+    width:auto;
+}
+
+.login-area{
+    width:180px;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.login-btn{
+    text-decoration:none;
+    background:#8B7D4B;
+    color:white;
+
+    padding:8px 25px;
+
+    border-radius:20px;
+
+    font-size:20px;
+
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    background:#6F6240;
+}
+
+/* =====================
+   BANNER
+===================== */
+
+.banner{
+    height:250px;
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* =====================
+   INFO
+===================== */
+
+.info-box{
+    background:black;
+    color:white;
+
+    padding:20px 25px;
+}
+
+.info-box p{
+    font-size:20px;
+}
+
+/* =====================
+   RULES
+===================== */
+
+.rules{
+    background:white;
+    padding:25px;
+}
+
+.rules h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.rules p{
+    font-size:20px;
+    margin-bottom:15px;
+    line-height:1.5;
+}
+
+/* =====================
+   LOGIN ADMIN
+===================== */
+
+.login-page{
+    background:#f4f6f9;
+}
+
+.login-box{
+    width:400px;
+    margin:100px auto;
+}
+
+.card{
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+    background:white;
+}
+
+.card-header{
+    background:#6f6949;
+    color:white;
+    text-align:center;
+
+    padding:20px;
+
+    font-size:30px;
+}
+
+.card-body{
+    padding:30px;
+}
+
+.form-control{
+    width:100%;
+    height:45px;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+
+.btn-login-admin{
+    width:100%;
+    border:none;
+
+    background:#8B5E3C;
+    color:white;
+
+    height:45px;
+
+    cursor:pointer;
+}
+
+.btn-login-admin:hover{
+    background:#6F4E37;
+}
+.btn-login{
+    width:100%;
+    background-color:#817a55;
+    border-color:#817a55;
+    color:white;
+}
+
+.btn-login:hover{
+    background-color:#6f6949;
+    border-color:#6f6949;
+    color:white;
+}
+
+/* ==========================
+   LOGIN MANAJER
+========================== */
+
+.manager-login-body{
+    background-color:#f4f6f9;
+}
+
+.manager-login-box{
+    width:400px;
+    margin:100px auto;
+}
+
+.manager-login-card{
+    border-radius:15px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.manager-login-header{
+    background:#74704F;
+    color:white;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    padding:20px;
+}
+
+.manager-login-body-card{
+    padding:25px;
+}
+
+.manager-login-btn{
+    width:100%;
+
+    background:#74704F;
+    color:white;
+
+    border:none;
+
+    padding:10px;
+
+    border-radius:6px;
+
+    font-size:16px;
+
+    cursor:pointer;
+}
+
+.manager-login-btn:hover{
+    background:#74704F;
+}
+
+.manager-login-body-card label{
+    font-weight:500;
+    margin-bottom:5px;
+}
+/* ==================================
+   PESERTA MAGANG ADMIN
+================================== */
+
+.peserta-body{
+    margin:0;
+    padding:0;
+
+    background:#d8d5b8;
+
+    font-family:'Barlow Condensed', sans-serif;
+}
+
+.peserta-header{
+    height:90px;
+
+    background:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 25px;
+
+    border-bottom:2px solid #c7c3a3;
+}
+
+.header-user{
+    font-size:22px;
+    color:#555;
+}
+
+.header-menu{
+    display:flex;
+    gap:35px;
+}
+
+.header-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:22px;
+}
+
+.peserta-content{
+    width:95%;
+
+    margin:30px auto;
+
+    background:#f7f7f7;
+
+    min-height:700px;
+
+    padding:20px;
+}
+
+.kembali-link{
+    text-decoration:none;
+
+    color:#555;
+
+    font-size:20px;
+
+    font-weight:500;
+}
+
+.peserta-title{
+    text-align:center;
+
+    color:#817a55;
+
+    font-size:60px;
+
+    margin-top:10px;
+    margin-bottom:30px;
+}
+
+.search-form{
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:30px;
+}
+
+.search-input{
+    width:400px;
+
+    height:50px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    padding:0 15px;
+
+    font-size:20px;
+
+    font-family:'Barlow Condensed', sans-serif;
+}
+
+.search-btn{
+    background:#817a55;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:0 25px;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#6f6949;
+}
+
+.peserta-card{
+    background:#c6c3a2;
+
+    border-radius:18px;
+
+    padding:15px 20px;
+
+    margin-bottom:18px;
+
+    box-shadow:0 4px 5px rgba(0,0,0,.35);
+}
+
+.peserta-card h3{
+    color:white;
+
+    margin:0;
+
+    font-size:24px;
+}
+
+.peserta-card p{
+    color:white;
+
+    margin-top:5px;
+
+    font-size:18px;
+}
+
+/* =====================
+   DASHBOARD ADMIN
+===================== */
+
+.admin-body{
+    background:#c7c4a6;
+}
+
+.admin-header{
+    height:70px;
+    background:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 25px;
+
+    border-bottom:2px solid #8a8461;
+}
+
+.admin-content{
+    width:95%;
+    min-height:600px;
+
+    background:white;
+
+    margin:20px auto;
+    padding:40px;
+}
+
+.menu-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    gap:25px;
+}
+
+.menu-btn{
+    width:220px;
+    height:45px;
+
+    background:#817a55;
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:15px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+}
+
+.menu-btn:hover{
+    background:#6f6949;
+}
+
+/* =========================
+   DASHBOARD MANAJER
+========================= */
+
+.manager-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#c9c5a7;
+}
+
+.manager-wrapper{
+    margin:0;
+    min-height:100vh;
+}
+
+.manager-header{
+    background:#ffffff;
+
+    height:70px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 35px;
+
+    border-bottom:1px solid #ddd;
+}
+
+.manager-title{
+    font-size:22px;
+    color:#555;
+}
+
+.manager-menu{
+    display:flex;
+    gap:30px;
+}
+
+.manager-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.manager-menu a:hover{
+    color:#99956c;
+}
+
+.manager-content{
+    background:#f7f7f5;
+
+    width:90%;
+    height:700px;
+
+    margin:20px auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    padding-top:60px;
+}
+
+.manager-btn{
+    background:#8a8561;
+
+    color:white;
+
+    text-decoration:none;
+
+    width:150px;
+    height:55px;
+
+    border-radius:15px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+
+    box-shadow:0 4px 5px rgba(0,0,0,.3);
+
+    transition:.3s;
+}
+
+.manager-btn:hover{
+    background:#726d4e;
+}
+
+/* =========================
+   PENILAIAN MANAJER
+========================= */
+
+.penilaian-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.penilaian-wrapper{
+    min-height:100vh;
+}
+
+.penilaian-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 25px;
+
+    border-bottom:2px solid #c8c4a5;
+}
+
+.penilaian-title{
+    font-size:22px;
+    color:#444;
+}
+
+.penilaian-menu{
+    display:flex;
+    gap:30px;
+}
+
+.penilaian-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+/* =====================
+   HALAMAN PENILAIAN
+===================== */
+
+.departemen-container{
+    width:90%;
+    margin:30px auto;
+}
+
+.judul-halaman{
+    color:#5b3a29;
+    margin:20px 0 30px;
+    font-size:38px;
+}
+
+.departemen-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.departemen-card{
+    background:#b0a56d;
+    color:rgb(0, 0, 0);
+    text-decoration:none;
+    border-radius:15px;
+    padding:35px 20px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.departemen-card:hover{
+    transform:translateY(-5px);
+}
+
+.departemen-card h3{
+    margin:0;
+    font-size:24px;
+    font-weight:600;
+}
+
+.back-text{
+    text-decoration:none;
+    color:#5b3a29;
+    font-size:22px;
+    font-weight:600;
+}
+
+/* =========================
+   ACCOUNTING
+========================= */
+
+.search-box{
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.search-input{
+    width:350px;
+
+    height:45px;
+
+    padding:0 15px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    font-family:'Barlow Condensed', sans-serif;
+}
+
+.search-btn{
+    background:#817a55;
+
+    color:white;
+
+    border:none;
+
+    padding:0 25px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#6f6949;
+}
+
+.accounting-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.accounting-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.accounting-user{
+    font-size:22px;
+    color:#555;
+}
+
+.accounting-menu{
+    display:flex;
+    gap:30px;
+}
+
+.accounting-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.accounting-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.departemen-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+/* =========================
+   ENGINEERING
+========================= */
+.search-box{
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.search-input{
+    width:350px;
+
+    height:45px;
+
+    padding:0 15px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    font-family:'Barlow Condensed', sans-serif;
+}
+
+.search-btn{
+    background:#817a55;
+
+    color:white;
+
+    border:none;
+
+    padding:0 25px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#6f6949;
+}
+.engineering-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.engineering-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.engineering-user{
+    font-size:22px;
+    color:#555;
+}
+
+.engineering-menu{
+    display:flex;
+    gap:30px;
+}
+
+.engineering-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.engineering-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.departemen-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+.engineering-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.engineering-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.engineering-user{
+    font-size:22px;
+    color:#555;
+}
+
+.engineering-menu{
+    display:flex;
+    gap:30px;
+}
+
+.engineering-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.engineering-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.departemen-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+/* =====================
+   FBP
+===================== */
+.search-box{
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.search-input{
+    width:350px;
+
+    height:45px;
+
+    padding:0 15px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    font-family:'Barlow Condensed', sans-serif;
+}
+
+.search-btn{
+    background:#817a55;
+
+    color:white;
+
+    border:none;
+
+    padding:0 25px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#6f6949;
+}
+.fbp-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.fbp-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.fbp-user{
+    font-size:22px;
+    color:#555;
+}
+
+.fbp-menu{
+    display:flex;
+    gap:30px;
+}
+
+.fbp-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.fbp-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.departemen-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+.fbp-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.fbp-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.fbp-user{
+    font-size:22px;
+    color:#555;
+}
+
+.fbp-menu{
+    display:flex;
+    gap:30px;
+}
+
+.fbp-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.fbp-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.fbp-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+/* =====================
+   FBS
+===================== */
+.search-box{
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.search-input{
+    width:350px;
+
+    height:45px;
+
+    padding:0 15px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    font-family:'Barlow Condensed', sans-serif;
+}
+
+.search-btn{
+    background:#817a55;
+
+    color:white;
+
+    border:none;
+
+    padding:0 25px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#6f6949;
+}
+.fbs-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.fbs-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.fbs-user{
+    font-size:22px;
+    color:#555;
+}
+
+.fbs-menu{
+    display:flex;
+    gap:30px;
+}
+
+.fbs-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.fbs-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.departemen-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+.fbs-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.fbs-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.fbs-user{
+    font-size:22px;
+    color:#555;
+}
+
+.fbs-menu{
+    display:flex;
+    gap:30px;
+}
+
+.fbs-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.fbs-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.fbs-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+/* =====================
+   FO
+===================== */
+.search-box{
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.search-input{
+    width:350px;
+
+    height:45px;
+
+    padding:0 15px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    font-family:'Barlow Condensed', sans-serif;
+}
+
+.search-btn{
+    background:#817a55;
+
+    color:white;
+
+    border:none;
+
+    padding:0 25px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#6f6949;
+}
+.fo-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.fo-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.fo-user{
+    font-size:22px;
+    color:#555;
+}
+
+.fo-menu{
+    display:flex;
+    gap:30px;
+}
+
+.fo-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.fo-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.departemen-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+.fo-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.fo-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.fo-user{
+    font-size:22px;
+    color:#555;
+}
+
+.fo-menu{
+    display:flex;
+    gap:30px;
+}
+
+.fo-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.fo-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.fo-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+/* =====================
+   HOUSE KEEPING
+===================== */
+.search-box{
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.search-input{
+    width:350px;
+
+    height:45px;
+
+    padding:0 15px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    font-family:'Barlow Condensed', sans-serif;
+}
+
+.search-btn{
+    background:#817a55;
+
+    color:white;
+
+    border:none;
+
+    padding:0 25px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#6f6949;
+}
+.hk-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.hk-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.hk-user{
+    font-size:22px;
+    color:#555;
+}
+
+.hk-menu{
+    display:flex;
+    gap:30px;
+}
+
+.hk-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.hk-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.departemen-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+.hk-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.hk-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.hk-user{
+    font-size:22px;
+    color:#555;
+}
+
+.hk-menu{
+    display:flex;
+    gap:30px;
+}
+
+.hk-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.hk-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.hk-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+/* =====================
+   SALES MARKETING
+===================== */
+.search-box{
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.search-input{
+    width:350px;
+
+    height:45px;
+
+    padding:0 15px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    font-family:'Barlow Condensed', sans-serif;
+}
+
+.search-btn{
+    background:#817a55;
+
+    color:white;
+
+    border:none;
+
+    padding:0 25px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#6f6949;
+}
+.sm-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.sm-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.sm-user{
+    font-size:22px;
+    color:#555;
+}
+
+.sm-menu{
+    display:flex;
+    gap:30px;
+}
+
+.sm-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.sm-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.departemen-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+.sm-body{
+    margin:0;
+    padding:0;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    background:#d8d5b8;
+}
+
+.sm-header{
+    background:white;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.sm-user{
+    font-size:22px;
+    color:#555;
+}
+
+.sm-menu{
+    display:flex;
+    gap:30px;
+}
+
+.sm-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:18px;
+}
+
+.sm-content{
+    background:#f8f8f8;
+
+    width:95%;
+
+    min-height:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+}
+
+.sm-title{
+    color:#999;
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.trainee-card{
+    background:#c8c4a5;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 5px rgba(0,0,0,.3);
+}
+
+.trainee-card h3{
+    margin:0;
+    color:white;
+}
+
+.trainee-card p{
+    margin-top:5px;
+    color:white;
+}
+
+/* signup peserta*/
+.tab-menu{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-bottom:25px;
+}
+
+.tab-menu a,
+.tab-menu span{
+    text-decoration:none;
+    font-size:34px;
+    color:#a89d6b;
+    font-weight:600;
+}
+
+.active-tab{
+    border-bottom:3px solid #8b845f;
+    padding-bottom:5px;
+    color:#6f6a4f !important;
+}
+/*edit peserta*/
+.btn-edit{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #8B5E3C;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-edit:hover{
+    background-color: #6F4A2D;
+}
+/* =====================
+   LOGIN PESERTA
+===================== */
+
+.login-peserta-body{
+    margin:0;
+    padding:0;
+    font-family:'Barlow Condensed', sans-serif;
+
+    background-image:url('/images/kamar.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    min-height:100vh;
+}
+
+.login-container{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.welcome-title{
+    margin-top:20px;
+    color:#e8e4cc;
+    font-size:48px;
+    font-weight:700;
+}
+
+.login-box{
+    width:650px;
+    background:#f8f8f5;
+
+    margin-top:20px;
+
+    padding:30px 60px;
+
+    border-radius:4px;
+}
+
+.login-tab-menu{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-bottom:30px;
+}
+
+.login-tab-menu span,
+.login-tab-menu a{
+    font-size:34px;
+    text-decoration:none;
+    color:#a89d6b;
+}
+
+.active-tab{
+    color:#6f6a4f !important;
+    border-bottom:3px solid #6f6a4f;
+}
+
+.login-box label{
+    display:block;
+
+    margin-top:15px;
+    margin-bottom:5px;
+
+    font-size:22px;
+}
+
+.login-box input{
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #c8c8c8;
+    border-radius:15px;
+
+    font-size:18px;
+}
+
+.forgot-password{
+    text-align:right;
+    margin-top:10px;
+}
+
+.forgot-password a{
+    color:#666666;
+}
+
+.login-box button{
+    width:100%;
+
+    margin-top:25px;
+
+    background:#7d7852;
+    color:white;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    font-size:32px;
+    font-family:'Barlow Condensed', sans-serif;
+
+    cursor:pointer;
+}
+.back-dashboard{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    text-decoration: none;
+    color: #6f6a4f;
+
+    background: rgba(248,248,245,0.9);
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+.back-dashboard:hover{
+    background: #ffffff;
+    transform: translateX(-3px);
+}
+
+/* =====================
+   FORGOT PASSWORD
+===================== */
+
+.fp-container{
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.fp-box{
+    width:700px;
+
+    background:#f8f8f5;
+
+    border-radius:20px;
+
+    padding:50px;
+}
+
+.fp-box h1{
+    text-align:center;
+
+    color:#6f6a4f;
+
+    font-size:48px;
+
+    margin-bottom:30px;
+}
+
+.fp-text{
+    color:#999;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+}
+
+.fp-box label{
+    display:block;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+}
+
+.fp-box input{
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #cfcfcf;
+    border-radius:15px;
+
+    font-size:20px;
+
+    box-sizing:border-box;
+}
+
+.code-area{
+    position:relative;
+
+    margin-top:20px;
+}
+
+.code-area a{
+    position:absolute;
+
+    right:0;
+    top:-35px;
+
+    color:blue;
+    text-decoration:underline;
+
+    font-size:18px;
+}
+
+.fp-box button{
+    width:100%;
+
+    margin-top:25px;
+
+    background:#7d7852;
+
+    color:white;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    font-size:32px;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    cursor:pointer;
+}
+
+
+/* =====================
+   LOGIN & REGISTER
+===================== */
+
+.auth-body{
+    background-image:url('../images/kasul.jpg');
+    background-size:cover;
+    background-position:center;
+    min-height:100vh;
+}
+
+.auth-overlay{
+    padding-top:20px;
+}
+
+.auth-overlay h1{
+    text-align:center;
+    color:#ffffff;
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.auth-box{
+    width:750px;
+    background:#f7f7f5;
+    margin:auto;
+    padding:25px 80px 50px;
+}
+
+.tab-menu{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-bottom:25px;
+}
+
+.tab-menu a{
+    text-decoration:none;
+    color:#99916c;
+    font-size:40px;
+}
+
+.tab-menu a.active{
+    border-bottom:4px solid #817a55;
+}
+
+.auth-box label{
+    display:block;
+    margin-top:10px;
+    font-size:25px;
+}
+
+.auth-box input{
+    width:100%;
+    height:50px;
+
+    border:1px solid #c7c7c7;
+    border-radius:15px;
+
+    padding:10px;
+    font-size:22px;
+
+    margin-bottom:10px;
+}
+
+.forgot{
+    text-align:right;
+}
+
+.forgot a{
+    color:#444;
+}
+
+.auth-box button{
+    width:100%;
+    height:55px;
+
+    border:none;
+
+    background:#817a55;
+    color:white;
+
+    border-radius:15px;
+
+    font-size:28px;
+
+    margin-top:20px;
+
+    cursor:pointer;
+}
+/* =====================
+   BUTTON KEMBALI
+===================== */
+
+.back-btn{
+    position:absolute;
+    top:20px;
+    left:20px;
+
+    background:white;
+    color:#817a55;
+
+    text-decoration:none;
+
+    padding:8px 18px;
+
+    border-radius:10px;
+
+    font-size:22px;
+    font-weight:500;
+
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#817a55;
+    color:white;
+}
+/* =====================
+   HOME PESERTA
+===================== */
+
+body{
+    margin:0;
+    padding:0;
+    font-family:'Barlow Condensed', sans-serif;
+    background:#f5f5f5;
+}
+
+/* HEADER */
+
+.home-header{
+    height:85px;
+    background:#ffffff;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 25px;
+
+    border-bottom:2px solid #ddd;
+}
+
+.header-left p{
+    margin:0;
+    font-size:18px;
+}
+
+.header-left h3{
+    margin:0;
+    font-size:22px;
+    font-weight:400;
+}
+
+.header-logo img{
+    height:55px;
+}
+
+.header-menu{
+    display:flex;
+    gap:25px;
+}
+
+.header-menu a{
+    text-decoration:none;
+    color:#333;
+    font-size:20px;
+}
+
+.header-menu a:hover{
+    color:#9a9167;
+}
+
+/* BANNER */
+
+.banner img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+/* INFO HITAM */
+
+.info-box{
+    background:black;
+    color:white;
+
+    padding:20px 25px;
+
+    font-size:22px;
+    line-height:1.5;
+}
+
+/* CONTENT */
+
+.content-box{
+    background:white;
+
+    padding:30px;
+
+    min-height:350px;
+}
+
+.content-box h2{
+    margin-top:0;
+
+    font-size:40px;
+    color:#222;
+}
+
+.content-box p{
+    font-size:24px;
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+    max-width:900px;
+}
+/* =========================
+   DEPARTEMEN PESERTA
+========================= */
+
+.departemen-list {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.departemen-list .departemen-card {
+    background: rgb(3, 0, 0);
+    border-left: 8px solid #8b5e3c;
+}
+
+.departemen-list .departemen-card h3 {
+    color: #5b3a29;
+}
+
+.departemen-list .departemen-card p {
+    font-size: 18px;
+}
+
+
+/* ==========================
+   HALAMAN DEPARTEMEN PESERTA
+========================== */
+
+.departemen-container{
+    width:95%;
+    margin:30px auto;
+}
+
+.judul-departemen{
+    color:#5b3a29;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.subjudul-departemen{
+    color:#666;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+/* 8 KOLOM */
+
+.departemen-grid{
+    display:grid;
+    grid-template-columns:repeat(8,1fr);
+    gap:15px;
+}
+
+/* CARD */
+
+.departemen-card{
+    background:#ffffff;
+    border-radius:12px;
+    padding:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    border-top:5px solid #8b5e3c;
+}
+
+.departemen-card h3{
+    font-size:20px;
+    color:#5b3a29;
+    margin-bottom:15px;
+    min-height:50px;
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    font-size:16px;
+}
+
+.info span:last-child{
+    font-weight:600;
+}
+
+/* STATUS */
+
+.status-tersedia{
+    color:green;
+    font-weight:bold;
+}
+
+.status-full{
+    color:red;
+    font-weight:bold;
+}
+/* ==========================
+   FORM PENDAFTARAN MAGANG
+========================== */
+
+.daftar-body{
+
+    background-image:url('/images/kasul.jpg');
+    background-size:cover;
+    background-position:center;
+
+    min-height:100vh;
+
+    font-family:'Barlow Condensed',sans-serif;
+}
+
+.daftar-container{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:30px auto;
+
+    background:rgba(255,255,255,.95);
+
+    padding:30px;
+
+    position:relative;
+}
+
+.back-btn{
+
+    position:absolute;
+
+    left:20px;
+    top:20px;
+
+    width:50px;
+    height:50px;
+
+    background:#b4ae82;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    color:black;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+}
+
+.top-form{
+
+    display:flex;
+
+    gap:50px;
+
+    margin-top:50px;
+}
+
+.foto-section{
+
+    width:300px;
+}
+
+.upload-foto{
+    width:180px;
+    height:240px;
+
+    border:1px solid #999;
+    margin-top:20px;
+
+    overflow:hidden;
+}
+
+.identitas-section{
+
+    flex:1;
+}
+
+.form-group{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:15px;
+}
+
+.form-group label{
+
+    width:180px;
+
+    font-size:22px;
+}
+
+.form-group input,
+.form-group select{
+
+    flex:1;
+
+    height:45px;
+
+    border:1px solid #999;
+
+    padding:10px;
+}
+
+.form-group-full{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:15px;
+}
+
+.form-group-full label{
+
+    width:250px;
+
+    font-size:22px;
+}
+
+.form-group-full input{
+
+    flex:1;
+
+    height:45px;
+
+    border:1px solid #999;
+
+    padding:10px;
+}
+
+.upload-row{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.upload-row label{
+
+    width:250px;
+
+    font-size:22px;
+}
+
+.btn-area{
+
+    text-align:right;
+
+    margin-top:20px;
+}
+
+.btn-area button{
+
+    background:#99956c;
+
+    color:white;
+
+    border:none;
+
+    width:180px;
+
+    height:55px;
+
+    border-radius:15px;
+
+    font-size:28px;
+
+    cursor:pointer;
+}
+.preview-foto{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    margin:0;
+    border:none;
+}
+/* =========================
+   PROFILE PESERTA
+========================= */
+.profile-container{
+    width:90%;
+    max-width:1000px;
+    margin:50px auto;
+}
+
+.profile-container h1{
+    margin-bottom:30px;
+    color:#333;
+}
+
+.profile-card{
+    background:#fff;
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
+}
+
+.profile-photo img{
+    width:180px;
+    height:240px;
+    object-fit:cover;
+
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.profile-info{
+    flex:1;
+}
+
+.profile-item{
+    margin-bottom:20px;
+}
+
+.profile-item label{
+    display:block;
+    font-weight:600;
+    color:#666;
+    margin-bottom:5px;
+}
+
+.profile-item p{
+    color:#222;
+    font-size:18px;
+}
+/* =========================
+   HALAMAN DEPARTEMEN ADMIN
+========================= */
+.btn-terima {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-terima:hover {
+    background-color: #218838;
+}
+
+.btn-tolak {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-tolak:hover {
+    background-color: #c82333;
+}
+
+.action-btn {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+/* =========================
+   detail pendaftaran
+========================= */
+.btn-detail{
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    display: inline-block;
+}
+.btn-hapus{
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-selesai{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 15px;
+    background:#6c757d;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-selesai:hover{
+    background:#495057;
+}
+.btn-hapus{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 16px;
+    background:#dc3545;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-hapus:hover{
+    background:#b02a37;
+}
+.histori-pendaftar-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #6f6949;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.histori-pendaftar-btn:hover {
+    background-color: #6f6949;
+    transform: translateY(-2px);
+}
+
+.histori-pendaftar-btn:active {
+    transform: translateY(0);
+}
+/* ===========================
+   FORM TERIMA PENDAFTAR
+=========================== */
+
+.terima-container{
+    width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.terima-title{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 32px;
+    color: #333;
+}
+
+.terima-info{
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #ceccb6;
+    border-radius: 8px;
+}
+
+.terima-info p{
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.form-group input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.btn-simpan{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #4a4a29;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-simpan:hover{
+    background: #4a4a29;
+}
+
+.btn-kembali{
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+/* ==========================
+   EDIT PESERTA MAGANG
+========================== */
+
+.edit-container{
+    width: 700px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.edit-title{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #333;
+}
+
+.edit-form label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.edit-form input,
+.edit-form select,
+.edit-form textarea{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.edit-form input:focus,
+.edit-form select:focus,
+.edit-form textarea:focus{
+    outline: none;
+    border-color: #483c15;
+}
+
+.btn-update{
+    width: 100%;
+    padding: 12px;
+    background: #483c15;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-update:hover{
+    background: #483c15;
+}
+
+.btn-kembali{
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.btn-kembali:hover{
+    color: #483c15;
+}
+/* =========================
+   HALAMAN DEPARTEMEN ADMIN
+========================= */
+
+.departemen-wrapper {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.departemen-wrapper h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #5b3a29;
+    font-size: 38px;
+}
+
+/* Card Departemen */
+
+.departemen-card {
+    background: #f8f1e7;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.departemen-card h3 {
+    color: #5b3a29;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.departemen-card label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+.departemen-card input,
+.departemen-card select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d8c3a5;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.departemen-card p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Tombol Simpan */
+
+.departemen-card button {
+    margin-top: 15px;
+    background: #8b5e3c;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Barlow Condensed', sans-serif;
+    transition: 0.3s;
+}
+
+.departemen-card button:hover {
+    background: #6f472d;
+}
+
+/* Tombol kembali */
+
+.back-text {
+    margin-left: 40px;
+    display: inline-block;
+    color: #5b3a29;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.back-text:hover {
+    text-decoration: underline;
+}
