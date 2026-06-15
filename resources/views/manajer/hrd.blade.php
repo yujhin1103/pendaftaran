@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Accounting</title>
+    <title>HOUSE KEEPING</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -10,17 +10,17 @@
 
 </head>
 
-<body class="accounting-body">
+<body class="hk-body">
 
-<div class="accounting-wrapper">
+<div class="hk-wrapper">
 
-    <div class="accounting-header">
+    <div class="hk-header">
 
-        <div class="accounting-user">
+        <div class="hk-user">
             Manajer
         </div>
 
-        <div class="accounting-menu">
+        <div class="hk-menu">
 
             <a href="/manajer/dashboard">
                 Home
@@ -34,16 +34,15 @@
 
     </div>
 
-    <div class="accounting-content">
+    <div class="hk-content">
 
         <a href="/manajer/penilaian" class="kembali-link">
             ← Kembali
         </a>
 
         <h2 class="departemen-title">
-    ACCOUNTING
-</h2>
-
+            HRD
+        </h2>
 <div class="search-box">
 
     <input
@@ -57,26 +56,39 @@
     </button>
 
 </div>
+        <div class="trainee-card">
 
-        <h2>Peserta Magang Accounting</h2>
+            <h3>Trainee 1</h3>
 
-@foreach($peserta as $data)
+            <p>Nama</p>
 
-<div class="peserta-card">
+        </div>
 
-    <h3>{{ $data->nama_lengkap }}</h3>
+        <div class="trainee-card">
 
-    <p>
-        {{ $data->asal_sekolah }}
-    </p>
+            <h3>Trainee 2</h3>
 
-    <a href="/manajer/form-penilaian/{{ $data->id }}">
-        Beri Penilaian
-    </a>
+            <p>Nama</p>
 
-</div>
+        </div>
 
-@endforeach
+        <div class="trainee-card">
+
+            <h3>Trainee 3</h3>
+
+            <p>Nama</p>
+
+        </div>
+
+        <div class="trainee-card">
+
+            <h3>Trainee 4</h3>
+
+            <p>Nama</p>
+
+        </div>
+
+    </div>
 
 </div>
 

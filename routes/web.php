@@ -116,6 +116,43 @@ Route::prefix('manajer')->group(function () {
     Route::get('/dashboard', [ManajerDashboardController::class, 'index']);
 
 });
+Route::get(
+    '/manajer/penilaian',
+    [ManajerDashboardController::class,'penilaian']
+);
+
+Route::get(
+    '/manajer/penilaian/{id}',
+    [ManajerDashboardController::class,'formPenilaian']
+);
+
+Route::post(
+    '/manajer/penilaian/{id}',
+    [ManajerDashboardController::class,'simpanPenilaian']
+);  
+Route::get(
+    '/manajer/accounting',
+    [ManajerDashboardController::class,'accounting']
+);
+
+Route::get(
+    '/manajer/form-penilaian/{id}',
+    [ManajerDashboardController::class,'formPenilaian']
+);
+
+Route::post(
+    '/manajer/form-penilaian/{id}',
+    [ManajerDashboardController::class,'simpanPenilaian']
+);
+Route::get(
+    '/manajer/form-penilaian/{id}',
+    [ManajerDashboardController::class,'formPenilaian']
+);
+
+Route::post(
+    '/manajer/penilaian/simpan/{id}',
+    [ManajerDashboardController::class,'simpanPenilaian']
+);
 
                     //LOGIN//
 
@@ -157,9 +194,10 @@ Route::get('/manajer/dashboard', function () {
     return view('manajer.dashboard');
 });
 
-Route::get('/manajer/penilaian', function () {
-    return view('manajer.penilaian');
-});
+Route::get(
+    '/manajer/penilaian',
+    [ManajerDashboardController::class, 'penilaian']
+);
 Route::get('/manajer/accounting', function () {
     return view('manajer.accounting');
 });

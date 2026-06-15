@@ -33,44 +33,61 @@
     </a>
 
     <h1 class="judul-halaman">
-        Pilih Departemen
+           Penilaian Peserta Magang
     </h1>
 
-    <div class="departemen-grid">
+</div>
+<form method="GET" action="{{ url('/manajer/penilaian') }}">
 
-        <a href="/manajer/accounting" class="departemen-card">
-            <h3>Accounting</h3>
-        </a>
+    <input
+        type="text"
+        name="search"
+        placeholder="Cari peserta..."
+        value="{{ request('search') }}"
+    >
 
-        <a href="/manajer/fbp" class="departemen-card">
-            <h3>FBP</h3>
-        </a>
+    <button type="submit">
+        Cari
+    </button>
 
-        <a href="/manajer/engineering" class="departemen-card">
-            <h3>Engineering</h3>
-        </a>
+</form>
+@if($peserta->count() > 0)
 
-        <a href="/manajer/fbs" class="departemen-card">
-            <h3>FBS</h3>
-        </a>
+    @foreach($peserta as $data)
 
-        <a href="/manajer/frontoffice" class="departemen-card">
-            <h3>Front Office</h3>
-        </a>
+    <div class="peserta-card">
 
-        <a href="/manajer/housekeeping" class="departemen-card">
-            <h3>House Keeping</h3>
-        </a>
+        <h3>{{ $data->nama_lengkap }}</h3>
 
-        <a href="/manajer/sales" class="departemen-card">
-            <h3>Sales & Marketing</h3>
+        <p>
+            Departemen :
+            {{ $data->departemen }}
+        </p>
+
+        <p>
+            Asal Sekolah :
+            {{ $data->asal_sekolah }}
+        </p>
+
+        <a
+            href="/manajer/form-penilaian/{{ $data->id }}"
+            class="btn-nilai">
+
+            Beri Penilaian
+
         </a>
 
     </div>
 
-</div>
+    @endforeach
 
-</div>
+@else
+
+    <p style="text-align:center; margin-top:20px;">
+        Peserta tidak ditemukan.
+    </p>
+
+@endif
 
 <script>
 function logoutManajer(){

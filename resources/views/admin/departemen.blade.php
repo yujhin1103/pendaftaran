@@ -19,8 +19,6 @@
 
        <div class="departemen-form">
 
-    <label>Departemen</label>
-
 </div>
 
 @foreach($departemens as $departemen)
@@ -40,7 +38,6 @@
             value="{{ $departemen->kuota }}"
         >
 
-        <label>Status</label>
 
         <select name="status">
 
@@ -73,17 +70,7 @@
     </div>
 
 </form>
-<div class="info">
-    <span>Status</span>
 
-    <span class="{{ $departemen->status == 'Full'
-        ? 'status-full'
-        : 'status-tersedia' }}">
-
-        {{ $departemen->status }}
-
-    </span>
-</div>
 
 @endforeach
 

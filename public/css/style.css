@@ -2929,6 +2929,121 @@ body{
     transform: translateY(0);
 }
 /* ===========================
+   FORM PENILAIAN
+=========================== */
+.penilaian-body{
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.penilaian-container{
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.penilaian-container h2{
+    text-align: center;
+    color: #7b4f2a;
+    margin-bottom: 25px;
+}
+
+.info-peserta{
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.info-peserta p{
+    margin: 5px 0;
+}
+
+.penilaian-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.penilaian-table th{
+    background: #7b4f2a;
+    color: white;
+    text-align: center;
+}
+
+.penilaian-table th,
+.penilaian-table td{
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.penilaian-table p{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.kategori td{
+    background: #e8d5c4;
+    font-weight: bold;
+    text-align: center;
+    color: #5d3a1a;
+}
+
+.penilaian-table input[type="number"]{
+    width: 70px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-simpan{
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #7b4f2a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn-simpan:hover{
+    background: #5f3d21;
+}
+.hasil-penilaian{
+    margin-top:20px;
+    padding:15px;
+    background:#f8f8f8;
+    border-radius:8px;
+}
+
+.hasil-penilaian h3{
+    color:#7b4f2a;
+    margin-bottom:10px;
+}
+
+.hasil-penilaian p{
+    font-size:18px;
+    margin:8px 0;
+}
+
+.rating-info{
+    margin-top:20px;
+}
+
+.rating-info table{
+    width:300px;
+}
+
+.rating-info td{
+    padding:8px;
+}
+/* ===========================
    FORM TERIMA PENDAFTAR
 =========================== */
 
@@ -3166,4 +3281,93 @@ body{
 
 .back-text:hover {
     text-decoration: underline;
+}
+
+/* =====================
+   SIGNATURE SECTION
+===================== */
+
+.signature-section {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.signature-section h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #817a55;
+    padding-bottom: 10px;
+}
+
+.signature-form {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    transition: 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="file"]:focus {
+    border-color: #817a55;
+    outline: none;
+    box-shadow: 0 0 5px rgba(129, 122, 85, 0.3);
+}
+
+.form-group small {
+    display: block;
+    color: #999;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.signature-preview {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.signature-preview p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+#preview-container {
+    background: #fafafa;
+    border-radius: 6px;
+    text-align: center;
+}
+
+#signature-preview {
+    border-radius: 4px;
 }
