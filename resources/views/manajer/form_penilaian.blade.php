@@ -140,53 +140,52 @@
     </tr>
 
 </table>
-<div class="hasil-penilaian">
 
-    <h3>Hasil Penilaian</h3>
+<div class="hasil-rating-container">
+    <div class="hasil-penilaian">
+        <h3>Hasil Penilaian</h3>
 
-    <p>
-        <strong>Total Score :</strong>
-        <span id="total_score">0</span>
-    </p>
+        <p>
+            <strong>Total Score :</strong>
+            <span id="total_score">0</span>
+        </p>
 
-    <p>
-        <strong>Rating :</strong>
-        <span id="rating">-</span>
-    </p>
+        <p>
+            <strong>Rating :</strong>
+            <span id="rating">-</span>
+        </p>
+    </div>
 
-</div>
+    <div class="rating-info">
+        <h4>Scoring 0 - 50</h4>
 
-<div class="rating-info">
+        <table>
+            <tr>
+                <td>41 - 50</td>
+                <td>Excellent</td>
+            </tr>
 
-    <h4>Scoring 0 - 50</h4>
+            <tr>
+                <td>31 - 40</td>
+                <td>Very Good</td>
+            </tr>
 
-    <table>
-        <tr>
-            <td>41 - 50</td>
-            <td>Excellent</td>
-        </tr>
+            <tr>
+                <td>21 - 30</td>
+                <td>Good</td>
+            </tr>
 
-        <tr>
-            <td>31 - 40</td>
-            <td>Very Good</td>
-        </tr>
+            <tr>
+                <td>11 - 20</td>
+                <td>Fair</td>
+            </tr>
 
-        <tr>
-            <td>21 - 30</td>
-            <td>Good</td>
-        </tr>
-
-        <tr>
-            <td>11 - 20</td>
-            <td>Fair</td>
-        </tr>
-
-        <tr>
-            <td>0 - 10</td>
-            <td>Needs Improvement</td>
-        </tr>
-    </table>
-
+            <tr>
+                <td>0 - 10</td>
+                <td>Needs Improvement</td>
+            </tr>
+        </table>
+    </div>
 </div>
 
         <!-- Signature Section -->
