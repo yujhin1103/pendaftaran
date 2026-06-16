@@ -69,13 +69,28 @@
             {{ $data->asal_sekolah }}
         </p>
 
-        <a
-            href="/manajer/form-penilaian/{{ $data->id }}"
-            class="btn-nilai">
+        @php
+            $penilaian = \App\Models\Penilaian::where('pendaftaran_id', $data->id)->first();
+        @endphp
 
-            Beri Penilaian
-
-        </a>
+        @if($penilaian)
+            <p style="color: green; font-weight: bold; margin-top: 10px;">
+                ✓ Sudah Dinilai
+            </p>
+            <a
+                href="/manajer/form-penilaian/{{ $data->id }}"
+                class="btn-nilai"
+                style="background-color: #999; cursor: not-allowed;"
+                disabled>
+                Sudah Dinilai
+            </a>
+        @else
+            <a
+                href="/manajer/form-penilaian/{{ $data->id }}"
+                class="btn-nilai">
+                Beri Penilaian
+            </a>
+        @endif
 
     </div>
 

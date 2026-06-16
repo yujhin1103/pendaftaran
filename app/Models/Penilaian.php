@@ -22,6 +22,17 @@ class Penilaian extends Model
         'rating',
         'tempat',
         'tanggal_ttd',
-        'tanda_tangan'
+        'tanda_tangan_manager',
+        'nama_penanda_tangan_manager',
+        'jabatan_manager',
+        'tanda_tangan_hrd',
+        'nama_penanda_tangan_hrd',
+        'jabatan_hrd',
+        'dokumen_penilaian'
     ];
+
+    public function pendaftaran()
+    {
+        return $this->belongsTo(Pendaftaran::class);
+    }
 }

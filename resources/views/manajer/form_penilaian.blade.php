@@ -193,22 +193,37 @@
         <!-- Signature Section -->
         <div class="signature-section">
             
-            <div class="signature-form">
-                <div class="signature-info">
-                    <input type="text" name="tempat" id="tempat" placeholder="Yogyakarta" class="signature-place" required>
+            <div class="signature-info">
+                <p>
+                    <strong>Lokasi & Tanggal :</strong>
+                    <input type="text" name="tempat" id="tempat" placeholder="Yogyakarta" class="signature-place" required style="width: 150px;">
                     <span>, </span>
                     <input type="date" name="tanggal" id="tanggal" class="signature-date" required>
-                </div>
+                </p>
+            </div>
 
-                <div class="signature-upload">
-                    <label for="tanda_tangan" class="upload-label">📎 Pilih Tanda Tangan</label>
-                    <input type="file" name="tanda_tangan" id="tanda_tangan" accept="image/*" required onchange="previewSignature(event)">
-                </div>
+            <div class="signature-container">
+                <!-- Kolom Penanda Tangan Manager -->
+                <div class="signature-column">
+                    <div class="signature-upload">
+                        <label for="tanda_tangan_manager" class="upload-label">📎 Tanda Tangan Manager/Pimpinan</label>
+                        <input type="file" name="tanda_tangan_manager" id="tanda_tangan_manager" accept="image/*" required onchange="previewSignature(event, 'manager')">
+                    </div>
 
-                <div id="preview-container" style="display: none; margin-top: 20px; text-align: center;">
-                    <img id="signature-preview" src="" alt="Tanda Tangan" style="max-width: 150px; height: auto; max-height: 100px;">
+                    <div id="preview-container-manager" class="preview-container">
+                        <img id="signature-preview-manager" src="" alt="Tanda Tangan Manager">
+                    </div>
+
+                    <div class="signature-name">
+                        <input type="text" name="nama_penanda_tangan_manager" id="nama_penanda_tangan_manager" placeholder="Nama Penanda Tangan" required>
+                        <input type="text" name="jabatan_manager" id="jabatan_manager" placeholder="Jabatan" required>
+                    </div>
                 </div>
             </div>
+
+            <p style="margin-top: 20px; font-size: 12px; color: #999; text-align: center;">
+                Tanda tangan HRD akan ditambahkan oleh Admin
+            </p>
         </div>
 
         <button type="submit" class="btn-simpan">
@@ -271,10 +286,10 @@ document.querySelectorAll(
 });
 
 // Function untuk preview tanda tangan
-function previewSignature(event) {
+function previewSignature(event, type = 'manager') {
     const file = event.target.files[0];
-    const previewContainer = document.getElementById('preview-container');
-    const previewImg = document.getElementById('signature-preview');
+    const previewContainer = document.getElementById(`preview-container-${type}`);
+    const previewImg = document.getElementById(`signature-preview-${type}`);
 
     if (file) {
         // Validasi ukuran file
@@ -300,6 +315,9 @@ function previewSignature(event) {
             previewContainer.style.display = 'block';
         };
         reader.readAsDataURL(file);
+    } else {
+        // Jika tidak ada file, sembunyikan preview
+        previewContainer.style.display = 'none';
     }
 }
 

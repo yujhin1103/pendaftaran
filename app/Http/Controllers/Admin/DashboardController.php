@@ -112,16 +112,12 @@ public function prosesTerima(Request $request, $id)
 }
 public function peserta(Request $request)
 {
-    Pendaftaran::where('status', 'Diterima')
-        ->whereDate('tanggal_selesai', '<', Carbon::today())
-        ->update([
-            'status' => 'Melebihi Batas'
-        ]);
+    // Jangan otomatis mengubah kolom status di database berdasarkan tanggal.
+    // Tampilkan kondisi "Melebihi Batas" hanya di tampilan saat diperlukan.
+    $query = Pendaftaran::query();
 
-    $query = Pendaftaran::whereIn('status', [
-        'Diterima',
-        'Melebihi Batas'
-    ]);
+    // Default filter: tampilkan peserta yang relevan (Diterima, Melebihi Batas, Alumni)
+    $query->whereIn('status', ['Diterima', 'Melebihi Batas', 'Alumni']);
 
     if ($request->search) {
         $query->where(
@@ -238,5 +234,82 @@ public function historiPendaftar()
         'admin.histori_pendaftar',
         compact('histori')
     );
+}
+
+public function penilaian(Request $request)
+{
+    $query = \App\Models\Penilaian::with('pendaftaran');
+
+    if ($request->search) {
+        $query->whereHas('pendaftaran', function($q) use ($request) {
+            $q->where('nama_lengkap', 'like', '%' . $request->search . '%');
+        });
+    }
+
+    $penilaian = $query->get();
+
+    return view('admin.penilaian', compact('penilaian'));
+}
+
+public function detailPenilaian($id)
+{
+    $penilaian = \App\Models\Penilaian::findOrFail($id);
+
+    return view('admin.detail_penilaian', compact('penilaian'));
+}
+
+public function editPenilaian($id)
+{
+    $penilaian = \App\Models\Penilaian::findOrFail($id);
+
+    return view('admin.edit_penilaian', compact('penilaian'));
+}
+
+public function updatePenilaian(Request $request, $id)
+{
+    $penilaian = \App\Models\Penilaian::findOrFail($id);
+
+    // Handle file upload for HRD signature
+    $tandaTanganHrdPath = $penilaian->tanda_tangan_hrd;
+    if ($request->hasFile('tanda_tangan_hrd')) {
+        if ($penilaian->tanda_tangan_hrd) {
+            Storage::disk('public')->delete($penilaian->tanda_tangan_hrd);
+        }
+        $file = $request->file('tanda_tangan_hrd');
+        $tandaTanganHrdPath = $file->store('tanda_tangan', 'public');
+    }
+
+    // Handle uploaded penilaian document
+    $dokumenPenilaianPath = $penilaian->dokumen_penilaian;
+    if ($request->hasFile('dokumen_penilaian')) {
+        if ($penilaian->dokumen_penilaian) {
+            Storage::disk('public')->delete($penilaian->dokumen_penilaian);
+        }
+        $file = $request->file('dokumen_penilaian');
+        $dokumenPenilaianPath = $file->store('dokumen_penilaian', 'public');
+    }
+
+    $penilaian->update([
+        'tanda_tangan_hrd' => $tandaTanganHrdPath,
+        'nama_penanda_tangan_hrd' => $request->nama_penanda_tangan_hrd,
+        'jabatan_hrd' => $request->jabatan_hrd,
+        'dokumen_penilaian' => $dokumenPenilaianPath
+    ]);
+
+    return redirect('/admin/penilaian')->with('success', 'Tanda tangan HRD dan dokumen penilaian berhasil disimpan');
+}
+
+public function downloadPenilaianDokumen($id)
+{
+    $penilaian = \App\Models\Penilaian::findOrFail($id);
+
+    if (! $penilaian->dokumen_penilaian || ! Storage::disk('public')->exists($penilaian->dokumen_penilaian)) {
+        return redirect()->back()->with('error', 'Dokumen penilaian tidak tersedia.');
+    }
+
+    $path = storage_path('app/public/' . $penilaian->dokumen_penilaian);
+    $name = basename($penilaian->dokumen_penilaian);
+
+    return response()->download($path, $name);
 }
 }

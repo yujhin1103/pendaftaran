@@ -38,7 +38,7 @@
             Pendaftar
         </a>
 
-        <a href="#" class="menu-btn">
+        <a href="/admin/penilaian" class="menu-btn">
             Penilaian
         </a>
 

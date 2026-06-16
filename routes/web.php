@@ -99,6 +99,31 @@ Route::post(
     [AdminDashboardController::class, 'tolakPeserta']
 );  
 
+Route::get(
+    '/admin/penilaian',
+    [AdminDashboardController::class, 'penilaian']
+);
+
+Route::get(
+    '/admin/penilaian/{id}',
+    [AdminDashboardController::class, 'detailPenilaian']
+);
+
+Route::get(
+    '/admin/penilaian/{id}/edit-hrd',
+    [AdminDashboardController::class, 'editPenilaian']
+);
+
+Route::post(
+    '/admin/penilaian/{id}/update-hrd',
+    [AdminDashboardController::class, 'updatePenilaian']
+);
+
+Route::get(
+    '/admin/penilaian/{id}/download',
+    [AdminDashboardController::class, 'downloadPenilaianDokumen']
+);
+
 // ================= PESERTA =================
 
 Route::prefix('peserta')->group(function () {

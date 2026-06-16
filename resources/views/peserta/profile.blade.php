@@ -81,7 +81,17 @@ function logoutConfirm() {
 
         <p>
             <strong>Status:</strong>
-            {{ $pendaftaran->status }}
+            @php
+                $today = \Carbon\Carbon::today();
+                $statusDisplay = $pendaftaran->status;
+                if($pendaftaran->tanggal_selesai) {
+                    $selesai = \Carbon\Carbon::parse($pendaftaran->tanggal_selesai);
+                    if($selesai->lt($today) && $pendaftaran->status == 'Diterima') {
+                        $statusDisplay = 'Melebihi Batas';
+                    }
+                }
+            @endphp
+            {{ $statusDisplay }}
         </p>
 
     </div>
@@ -128,7 +138,7 @@ function logoutConfirm() {
     </p>
 </div>
 
-@endif
+@endif  
 </div>
 
             <h3>{{ $user->name }}</h3>

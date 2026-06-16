@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Pendaftaran;
 use App\Models\Penilaian;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -14,21 +15,32 @@ class DashboardController extends Controller
         return view('manajer.dashboard');
     }
     public function penilaian(Request $request)
-{
-    $query = Pendaftaran::where('status', 'Diterima');
+    {
+        // Tampilkan peserta yang masih relevan untuk penilaian oleh manajer.
+        // Termasuk peserta dengan status: Diterima, Melebihi Batas (sudah lewat tanggal
+        // selesai tapi belum dipindahkan ke histori), atau Alumni (sudah selesai).
+        // Tampilkan peserta yang telah selesai atau relevan untuk penilaian.
+        $query = Pendaftaran::query();
 
-    if ($request->search) {
-        $query->where(
-            'nama_lengkap',
-            'like',
-            '%' . $request->search . '%'
-        );
+        // Kondisi: peserta yang sudah selesai (tanggal_selesai <= hari ini)
+        // atau peserta dengan status yang relevan (Diterima, Alumni).
+        $query->where(function($q) {
+            $q->whereDate('tanggal_selesai', '<=', Carbon::today())
+              ->orWhereIn('status', ['Diterima', 'Alumni']);
+        });
+
+        if ($request->search) {
+            $query->where(
+                'nama_lengkap',
+                'like',
+                '%' . $request->search . '%'
+            );
+        }
+
+        $peserta = $query->get();
+
+        return view('manajer.penilaian', compact('peserta'));
     }
-
-    $peserta = $query->get();
-
-    return view('manajer.penilaian', compact('peserta'));
-}
 public function formPenilaian($id)
 {
     $peserta = Pendaftaran::findOrFail($id);
@@ -67,11 +79,11 @@ public function simpanPenilaian(
         $rating = 'Needs Improvement';
     }
 
-    // Handle file upload
-    $tandaTanganPath = null;
-    if ($request->hasFile('tanda_tangan')) {
-        $file = $request->file('tanda_tangan');
-        $tandaTanganPath = $file->store('tanda_tangan', 'public');
+    // Handle file upload for manager signature
+    $tandaTanganManagerPath = null;
+    if ($request->hasFile('tanda_tangan_manager')) {
+        $file = $request->file('tanda_tangan_manager');
+        $tandaTanganManagerPath = $file->store('tanda_tangan', 'public');
     }
 
     Penilaian::create([
@@ -94,7 +106,9 @@ public function simpanPenilaian(
         
         'tempat' => $request->tempat,
         'tanggal_ttd' => $request->tanggal,
-        'tanda_tangan' => $tandaTanganPath
+        'tanda_tangan_manager' => $tandaTanganManagerPath,
+        'nama_penanda_tangan_manager' => $request->nama_penanda_tangan_manager,
+        'jabatan_manager' => $request->jabatan_manager
     ]);
 
     return redirect('/manajer/penilaian')
