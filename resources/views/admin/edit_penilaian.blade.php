@@ -12,7 +12,9 @@
 
 <div class="penilaian-container">
 
-    <h2 align="center">TAMBAH TANDA TANGAN HRD</h2>
+   <h2 align="center">
+    {{ $penilaian->tanda_tangan_hrd ? 'EDIT TANDA TANGAN HRD' : 'TAMBAH TANDA TANGAN HRD' }}
+</h2>
 
     <a href="/admin/penilaian" class="btn-kembali">← Kembali</a>
 
@@ -26,14 +28,46 @@
 
         <p>
             <strong>Periode :</strong>
-            {{ $penilaian->pendaftaran->tanggal_mulai }}
+            {{ date('d-m-Y', strtotime($penilaian->pendaftaran->tanggal_mulai)) }}
             -
-            {{ $penilaian->pendaftaran->tanggal_selesai }}
+            {{ date('d-m-Y', strtotime($penilaian->pendaftaran->tanggal_selesai)) }}
         </p>
 
     </div>
 
-    <div class="hasil-rating-container">
+<div class="status-section">
+
+    <p>
+        <strong>Status Manager :</strong>
+
+        @if($penilaian->tanda_tangan_manager)
+            <span style="color:green;font-weight:bold;">
+                ✓ Sudah Ditandatangani
+            </span>
+        @else
+            <span style="color:red;font-weight:bold;">
+                ✗ Belum Ditandatangani
+            </span>
+        @endif
+    </p>
+
+    <p>
+        <strong>Status HRD :</strong>
+
+        @if($penilaian->tanda_tangan_hrd)
+            <span style="color:green;font-weight:bold;">
+                ✓ Sudah Ditandatangani
+            </span>
+        @else
+            <span style="color:red;font-weight:bold;">
+                ✗ Belum Ditandatangani
+            </span>
+        @endif
+    </p>
+
+</div>
+
+<div class="hasil-rating-container">
         <div class="hasil-penilaian">
             <h3>Hasil Penilaian</h3>
 
@@ -86,7 +120,13 @@
         <div class="signature-info">
             <p>
                 <strong>Lokasi & Tanggal :</strong>
-                <span>{{ $penilaian->tempat }}, {{ $penilaian->tanggal_ttd }}</span>
+                <span>
+                    {{ $penilaian->tempat ?? '-' }},
+                    {{ $penilaian->tanggal_ttd
+                        ? date('d-m-Y', strtotime($penilaian->tanggal_ttd))
+                        : '-'
+                    }}
+                </span>
             </p>
         </div>
 
@@ -137,23 +177,28 @@
                         <input type="text" name="jabatan_hrd" id="jabatan_hrd" placeholder="Jabatan" value="{{ $penilaian->jabatan_hrd ?? 'HRD' }}" required>
                     </div>
                 </div>
-            </div>
-
-            <div class="signature-container" style="margin-top: 20px;">
-                <div class="signature-column" style="flex: 1;">
-                    <p style="font-weight: bold; margin-bottom: 10px;">Dokumen Penilaian</p>
-                    <input type="file" name="dokumen_penilaian" id="dokumen_penilaian" accept="application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
-                    @if($penilaian->dokumen_penilaian)
-                        <p style="font-size: 12px; color: #555; margin-top: 8px;">
-                            Dokumen saat ini: <a href="{{ asset('storage/' . $penilaian->dokumen_penilaian) }}" target="_blank">Lihat dokumen</a>
-                        </p>
-                    @endif
-                </div>
-            </div>
-
+</div>
             <button type="submit" class="btn-simpan" style="margin-top: 30px;">
-                Simpan Tanda Tangan HRD & Dokumen
-            </button>
+    Simpan Tanda Tangan HRD
+</button>
+
+@if($penilaian->tanda_tangan_hrd)
+
+<a
+    href="/admin/penilaian/{{ $penilaian->id }}/pdf"
+    class="btn-simpan"
+    style="
+        display:inline-block;
+        margin-top:15px;
+        text-decoration:none;
+        text-align:center;
+    ">
+
+    Unduh PDF Penilaian
+
+</a>
+
+@endif
         </form>
     </div>
 

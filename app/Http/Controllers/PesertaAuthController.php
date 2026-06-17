@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\Pendaftaran;
+use App\Models\Penilaian;
 
 class PesertaAuthController extends Controller
 {
@@ -72,22 +73,25 @@ class PesertaAuthController extends Controller
         return redirect('/peserta/login');
     }
 
-public function profile()
+public function penilaian()
 {
-    if (!Session::has('user_id')) {
-        return redirect('/peserta/login');
-    }
-
-    $user = User::find(Session::get('user_id'));
-
     $pendaftaran = Pendaftaran::where(
         'user_id',
         Session::get('user_id')
     )->latest()->first();
 
+    $penilaian = null;
+
+    if ($pendaftaran) {
+        $penilaian = Penilaian::where(
+            'pendaftaran_id',
+            $pendaftaran->id
+        )->first();
+    }
+
     return view(
-        'peserta.profile',
-        compact('user', 'pendaftaran')
+        'peserta.penilaian',
+        compact('penilaian')
     );
 }
 }

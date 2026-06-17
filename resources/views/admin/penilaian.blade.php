@@ -99,24 +99,24 @@
     </p>
 
     <p>
-        Status HRD :
-        @if($data->tanda_tangan_hrd)
-            <span style="color: green; font-weight: bold;">✓ Sudah Ditandatangani</span>
-        @else
-            <span style="color: red; font-weight: bold;">⚠ Belum Ditandatangani</span>
-        @endif
-    </p>
+    Status HRD :
 
-    <p>
-        Dokumen Penilaian :
-        @if($data->dokumen_penilaian)
-            <span style="color: green; font-weight: bold;">✓ Sudah diunggah</span>
-        @else
-            <span style="color: #E67E22; font-weight: bold;">⚠ Belum diunggah</span>
-        @endif
-    </p>
+    @if($data->tanda_tangan_hrd)
 
-    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <span style="color:green;font-weight:bold;">
+            ✓ Sudah Ditandatangani
+        </span>
+
+    @else
+
+        <span style="color:red;font-weight:bold;">
+            ✗ Belum Ditandatangani
+        </span>
+
+    @endif
+</p>
+
+   <div style="display:flex; gap:10px; flex-wrap:wrap;">
         <a
             href="/admin/penilaian/{{ $data->id }}"
             class="btn-nilai">
@@ -125,40 +125,14 @@
 
         </a>
 
-        @if(!$data->tanda_tangan_hrd)
-            <a
-                href="/admin/penilaian/{{ $data->id }}/edit-hrd"
-                class="btn-nilai"
-                style="background-color: #ff9800;">
+        <a
+            href="/admin/penilaian/{{ $data->id }}/edit-hrd"
+            class="btn-nilai"
+            style="background-color: #ff9800;">
 
-                Tambah Tanda Tangan HRD
+            Tambah Tanda Tangan HRD
 
-            </a>
-        @else
-            <a
-                href="/admin/penilaian/{{ $data->id }}/edit-hrd"
-                class="btn-nilai"
-                style="background-color: #2196F3;">
-
-                @if($data->dokumen_penilaian)
-                    Edit Dokumen Penilaian
-                @else
-                    Upload Dokumen Penilaian
-                @endif
-
-            </a>
-        @endif
-
-        @if($data->dokumen_penilaian)
-            <a
-                href="/admin/penilaian/{{ $data->id }}/download"
-                class="btn-nilai"
-                style="background-color: #4CAF50;">
-
-                Unduh Dokumen
-
-            </a>
-        @endif
+        </a>
     </div>
 
 </div>

@@ -236,26 +236,42 @@
         </div>
     </div>
 
-    @if($penilaian->tanda_tangan_hrd)
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="/admin/penilaian/{{ $penilaian->id }}/edit-hrd" class="btn-nilai" style="display: inline-block;">
-                    Edit Tanda Tangan HRD & Dokumen
-                </a>
-            </div>
-        @else
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="/admin/penilaian/{{ $penilaian->id }}/edit-hrd" class="btn-nilai" style="display: inline-block; background-color: #ff9800;">
-                    Upload Tanda Tangan HRD & Dokumen
-                </a>
-            </div>
-        @endif
+   @if($penilaian->tanda_tangan_hrd)
 
-        @if($penilaian->dokumen_penilaian)
-            <div style="text-align: center; margin-top: 10px;">
-                <a href="/admin/penilaian/{{ $penilaian->id }}/download" class="btn-nilai" style="display: inline-block; background-color: #4CAF50;">
-                    Unduh Dokumen Penilaian
-</div>
+    <div style="text-align:center; margin-top:20px;">
 
+        <a href="/admin/penilaian/{{ $penilaian->id }}/edit-hrd"
+           class="btn-nilai">
+
+            Edit Tanda Tangan HRD
+
+        </a>
+
+        <a href="/admin/penilaian/{{ $penilaian->id }}/pdf"
+           class="btn-nilai"
+           style="background-color:#4CAF50;">
+
+            Unduh PDF Penilaian
+
+        </a>
+
+    </div>
+
+@else
+
+    <div style="text-align:center; margin-top:20px;">
+
+        <a href="/admin/penilaian/{{ $penilaian->id }}/edit-hrd"
+           class="btn-nilai"
+           style="background-color:#ff9800;">
+
+            Tambah Tanda Tangan HRD
+
+        </a>
+
+    </div>
+
+@endif
 </div>
 
 </body>

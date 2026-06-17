@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Pendaftaran;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use App\Models\Penilaian;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 class DashboardController extends Controller
 {
@@ -279,22 +281,12 @@ public function updatePenilaian(Request $request, $id)
         $tandaTanganHrdPath = $file->store('tanda_tangan', 'public');
     }
 
-    // Handle uploaded penilaian document
-    $dokumenPenilaianPath = $penilaian->dokumen_penilaian;
-    if ($request->hasFile('dokumen_penilaian')) {
-        if ($penilaian->dokumen_penilaian) {
-            Storage::disk('public')->delete($penilaian->dokumen_penilaian);
-        }
-        $file = $request->file('dokumen_penilaian');
-        $dokumenPenilaianPath = $file->store('dokumen_penilaian', 'public');
-    }
-
+   
     $penilaian->update([
-        'tanda_tangan_hrd' => $tandaTanganHrdPath,
-        'nama_penanda_tangan_hrd' => $request->nama_penanda_tangan_hrd,
-        'jabatan_hrd' => $request->jabatan_hrd,
-        'dokumen_penilaian' => $dokumenPenilaianPath
-    ]);
+    'tanda_tangan_hrd' => $tandaTanganHrdPath,
+    'nama_penanda_tangan_hrd' => $request->nama_penanda_tangan_hrd,
+    'jabatan_hrd' => $request->jabatan_hrd
+]);
 
     return redirect('/admin/penilaian')->with('success', 'Tanda tangan HRD dan dokumen penilaian berhasil disimpan');
 }
@@ -311,5 +303,52 @@ public function downloadPenilaianDokumen($id)
     $name = basename($penilaian->dokumen_penilaian);
 
     return response()->download($path, $name);
+}
+public function formUploadPenilaian($id)
+{
+    $penilaian = Penilaian::findOrFail($id);
+
+    return view(
+        'admin.upload_penilaian',
+        compact('penilaian')
+    );
+}
+public function simpanDokumenPenilaian(Request $request, $id)
+{
+    $request->validate([
+        'dokumen_penilaian' =>
+            'required|mimes:pdf|max:5120'
+    ]);
+
+    $penilaian = Penilaian::findOrFail($id);
+
+    $file = $request->file('dokumen_penilaian')
+        ->store('dokumen_penilaian', 'public');
+
+    $penilaian->update([
+        'dokumen_penilaian' => $file
+    ]);
+
+    return redirect('/admin/penilaian')
+        ->with(
+            'success',
+            'Form penilaian final berhasil diupload'
+        );
+}
+public function downloadPdf($id)
+{
+    $penilaian = Penilaian::with('pendaftaran')
+        ->findOrFail($id);
+
+    $pdf = Pdf::loadView(
+        'pdf.penilaian',
+        compact('penilaian')
+    );
+
+    return $pdf->download(
+        'Penilaian_' .
+        $penilaian->pendaftaran->nama_lengkap .
+        '.pdf'
+    );
 }
 }

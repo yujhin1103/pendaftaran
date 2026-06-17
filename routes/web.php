@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Admin Controller
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
-
+use App\Http\Controllers\Admin\DashboardController;
 
 
 
@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Peserta\DashboardController as PesertaDashboardController;
 use App\Http\Controllers\PesertaAuthController;
 use App\Http\Controllers\PendaftaranController;
+
 
 // Manajer Controller
 use App\Http\Controllers\Manajer\DashboardController as ManajerDashboardController;
@@ -123,6 +124,19 @@ Route::get(
     '/admin/penilaian/{id}/download',
     [AdminDashboardController::class, 'downloadPenilaianDokumen']
 );
+Route::get(
+    '/admin/penilaian/upload/{id}',
+    [AdminDashboardController::class, 'formUploadPenilaian']
+);
+
+Route::post(
+    '/admin/penilaian/upload/{id}',
+    [AdminDashboardController::class, 'simpanDokumenPenilaian']
+);
+Route::get(
+    '/admin/penilaian/{id}/pdf',
+    [DashboardController::class, 'downloadPdf']
+);
 
 // ================= PESERTA =================
 
@@ -131,6 +145,10 @@ Route::prefix('peserta')->group(function () {
     Route::get('/dashboard', [PesertaDashboardController::class, 'index']);
 
 });
+Route::get(
+    '/peserta/penilaian',
+    [PesertaAuthController::class, 'penilaian']
+);
 
 
 
