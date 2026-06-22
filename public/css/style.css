@@ -3043,6 +3043,425 @@ body{
 .rating-info td{
     padding:8px;
 }
+/* ==========================
+   PENILAIAN PESERTA MAGANG
+========================== */
+
+.penilaian-wrapper{
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.penilaian-title{
+    text-align:center;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:30px;
+    color:#1f2937;
+}
+
+.penilaian-card{
+    background:#ffffff;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.penilaian-success{
+    text-align:center;
+}
+
+.penilaian-success h3{
+    color:#72714d;
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.penilaian-success p{
+    color:#4b5563;
+    font-size:16px;
+    margin-bottom:25px;
+}
+
+.penilaian-empty{
+    text-align:center;
+}
+
+.penilaian-empty h3{
+    color:#dc2626;
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.penilaian-empty p{
+    color:#6b7280;
+    font-size:15px;
+}
+
+.penilaian-btn-group{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.penilaian-btn{
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-lihat{
+    background:#605439;
+    color:white;
+}
+
+.btn-lihat:hover{
+    background:#605439;
+}
+
+.btn-download{
+    background:#72714d;
+    color:white;
+}
+
+.btn-download:hover{
+    background:#72714d;
+}
+
+.status-badge{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 16px;
+    border-radius:20px;
+    background:#dcfce7;
+    color:#72714d;
+    font-weight:600;
+    font-size:14px;
+}
+.btn-kembali{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 20px;
+    background:white;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.btn-kembali:hover{
+    transform:translateY(-2px);
+    background:#f8fafc;
+}
+/* ===========================
+   FORGOT PASSWORD
+=========================== */
+
+.login-peserta-body{
+    margin:0;
+    padding:0;
+    font-family:'Barlow Condensed',sans-serif;
+    background:url('/images/kasul.jpg');
+    background-size:cover;
+    background-position:center;
+    min-height:100vh;
+}
+
+.fp-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.fp-box{
+    width:600px;
+    background:#f5f5f5;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.fp-box h1{
+    text-align:center;
+    color:#7d7758;
+    font-size:58px;
+    margin-bottom:20px;
+}
+
+.fp-text{
+    text-align:center;
+    color:#999;
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.fp-box label{
+    display:block;
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.fp-box input{
+    width:100%;
+    box-sizing:border-box;
+    height:55px;
+    border:1px solid #cfc7a8;
+    border-radius:18px;
+    padding:0 20px;
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.btn-fp{
+    width:100%;
+    height:60px;
+    border:none;
+    border-radius:18px;
+    background:#8a8561;
+    color:white;
+    font-size:26px;
+    font-family:'Barlow Condensed',sans-serif;
+    cursor:pointer;
+    margin-bottom:18px;
+    transition:.3s;
+}
+
+.btn-fp:hover{
+    background:#726d4f;
+}
+
+.back-dashboard{
+    position:absolute;
+    top:20px;
+    left:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#f4f1dd;
+    text-decoration:none;
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+}
+
+.otp-alert{
+    background:#d4edda;
+    color:#155724;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+    text-align:center;
+}
+/* ===========================
+   reset password*/
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: url('/images/kasul.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.card {
+    background: rgba(245, 243, 235, 0.92);
+    border-radius: 14px;
+    padding: 2.5rem;
+    width: 420px;
+    max-width: 90%;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    color: #2c2c2a;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #888780;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c2c2a;
+    margin-bottom: 6px;
+}
+
+.input-wrap {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-wrap input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(180, 170, 140, 0.5);
+    border-radius: 8px;
+    padding: 10px 44px 10px 14px;
+    font-size: 14px;
+    color: #888780;
+    outline: none;
+}
+
+.input-wrap input:focus {
+    border-color: rgba(140, 130, 100, 0.8);
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #888780;
+    font-size: 18px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: rgba(195, 185, 145, 0.75);
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #4a3e1a;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.btn:hover {
+    background: rgba(175, 165, 125, 0.9);
+}
+
+.alert {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 1rem;
+}
+
+.alert-danger {
+    background: #fee;
+    color: #a32d2d;
+    border: 1px solid #f7c1c1;
+}
+
+.alert-success {
+    background: #eaf3de;
+    color: #3b6d11;
+    border: 1px solid #c0dd97;
+}
+/* ==========================
+   UPLOAD PDF PENILAIAN
+========================== */
+
+.upload-container{
+    max-width:700px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.upload-title{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:25px;
+    color:#1f2937;
+    text-align:center;
+}
+
+.upload-info{
+    background:#f8fafc;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:25px;
+}
+
+.upload-info p{
+    margin:8px 0;
+    font-size:15px;
+}
+
+.upload-label{
+    display:block;
+    font-weight:600;
+    margin-bottom:10px;
+    color:#374151;
+}
+
+.upload-file{
+    width:100%;
+    padding:12px;
+    border:2px dashed #cbd5e1;
+    border-radius:8px;
+    background:#f9fafb;
+    cursor:pointer;
+}
+
+.upload-file:hover{
+    border-color:#60512d;
+}
+
+.upload-btn{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#60512d;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.upload-btn:hover{
+    background:#60512d;
+}
+
+.kembali-btn{
+    display:inline-block;
+    margin-bottom:20px;
+    text-decoration:none;
+    color:#60512d;
+    font-weight:600;
+}
+
+.kembali-btn:hover{
+    text-decoration:underline;
+}
 /* ===========================
    FORM TERIMA PENDAFTAR
 =========================== */

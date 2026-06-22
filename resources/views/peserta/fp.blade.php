@@ -10,51 +10,72 @@
 
 <body class="login-peserta-body">
 
-    <a href="/peserta/login" class="back-dashboard">
-        ←
-    </a>
+<a href="/peserta/login" class="back-dashboard">
+    ←
+</a>
 
-    <div class="fp-container">
+<div class="fp-container">
 
-        <div class="fp-box">
+    <div class="fp-box">
 
-            <h1>Forgot Password</h1>
+        <h1>Forgot Password</h1>
 
-            <p class="fp-text">
-                Please enter your email to reset the password
-            </p>
+        <p class="fp-text">
+            Please enter your email to reset the password
+        </p>
 
-            <form>
+        @if(session('success'))
+            <div class="otp-alert">
+                {{ session('success') }}
+            </div>
+        @endif
 
-                <label>Your email</label>
+        {{-- FORM KIRIM OTP --}}
+        <form method="POST" action="/peserta/send-otp">
+            @csrf
 
-                <input
-                    type="email"
-                    placeholder="yourmail@gmail.com"
-                >
+            <label>Your email</label>
 
-                <div class="code-area">
+            <input
+                type="email"
+                name="email"
+                value="{{ session('otp_email') }}"
+                placeholder="yourmail@gmail.com"
+                required
+            >
 
-                    <input
-                        type="text"
-                        placeholder="enter code"
-                    >
+            <button type="submit" class="btn-fp">
+                Get Code
+            </button>
+        </form>
 
-                    <a href="#">
-                        send code
-                    </a>
+        {{-- FORM VERIFIKASI OTP --}}
+        <form method="POST" action="/peserta/verify-otp">
 
-                </div>
+            @csrf
 
-                <button type="submit">
-                    Continue
-                </button>
+            <input
+                type="hidden"
+                name="email"
+                value="{{ session('otp_email') }}"
+            >
 
-            </form>
+            <input
+                type="text"
+                name="otp"
+                placeholder="enter code"
+                required
+            >
 
-        </div>
+            <button type="submit" class="btn-fp">
+                Continue
+            </button>
+
+        </form>
 
     </div>
+
+</div>
 
 </body>
 </html>

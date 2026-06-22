@@ -1,58 +1,75 @@
-<div class="peserta-content">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penilaian Peserta</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+    <body>
 
-    <h1 class="peserta-title">
-        Hasil Penilaian Magang
-    </h1>
+<div class="penilaian-wrapper">
 
-    @if($penilaian)
+    <a href="/peserta/home" class="btn-kembali">
+        ← Kembali ke Dashboard
+    </a>
+<div class="penilaian-wrapper">
 
-        <div class="peserta-card">
+<h1 class="penilaian-title">
+    Penilaian Peserta Magang
+</h1>
+
+<div class="penilaian-card">
+
+    @if($penilaian && $penilaian->dokumen_penilaian)
+
+        <div class="penilaian-success">
+
+            <h3>
+                Dokumen Penilaian Tersedia
+            </h3>
+
+            <span class="status-badge">
+                ✓ Sudah Diverifikasi
+            </span>
 
             <p>
-                <strong>Total Nilai :</strong>
-                {{ $penilaian->total_score }}
+                Dokumen penilaian magang Anda telah selesai diproses dan dapat dilihat maupun diunduh.
             </p>
 
-            <p>
-                <strong>Rating :</strong>
-                {{ $penilaian->rating }}
-            </p>
+            <div class="penilaian-btn-group">
 
-            <p>
-                <strong>Tanggal Penilaian :</strong>
-                {{ $penilaian->tanggal_ttd ? date('d-m-Y', strtotime($penilaian->tanggal_ttd)) : '-' }}
-            </p>
+                <a
+                    href="{{ asset('storage/' . $penilaian->dokumen_penilaian) }}"
+                    target="_blank"
+                    class="penilaian-btn btn-lihat">
 
-            @if($penilaian->dokumen_penilaian)
+                    Lihat PDF
 
-                <div style="margin-top:20px;">
+                </a>
 
-                    <a
-                        href="/admin/penilaian/{{ $penilaian->id }}/download"
-                        class="btn-nilai">
+                <a
+                    href="{{ asset('storage/' . $penilaian->dokumen_penilaian) }}"
+                    download
+                    class="penilaian-btn btn-download">
 
-                        Unduh Hasil Penilaian
+                    Download PDF
 
-                    </a>
+                </a>
 
-                </div>
-
-            @else
-
-                <p style="color:#E67E22; font-weight:bold;">
-                    Dokumen penilaian belum tersedia.
-                </p>
-
-            @endif
+            </div>
 
         </div>
 
     @else
 
-        <div class="peserta-card">
+        <div class="penilaian-empty">
+
+            <h3>
+                Dokumen Belum Tersedia
+            </h3>
 
             <p>
-                Penilaian belum tersedia.
+                Dokumen penilaian magang Anda masih dalam proses dan belum diunggah oleh admin.
             </p>
 
         </div>
@@ -60,3 +77,8 @@
     @endif
 
 </div>
+
+</div>
+
+</body>
+</html>

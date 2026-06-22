@@ -45,7 +45,9 @@ function logoutConfirm() {
         <a href="/peserta/departemen">Department</a>
         <a href="/peserta/profile">Profile</a>
         <a href="/peserta/pendaftaran">Register</a>
-        <a href="#">Nilai</a>
+        <a href="/peserta/penilaian">
+                    Penilaian
+                </a>
         <a href="#" onclick="logoutConfirm()">Logout</a>
     </nav>
 

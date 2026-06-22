@@ -12,6 +12,9 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Peserta\DashboardController as PesertaDashboardController;
 use App\Http\Controllers\PesertaAuthController;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\ForgotPasswordController;
+
+
 
 
 // Manajer Controller
@@ -137,7 +140,15 @@ Route::get(
     '/admin/penilaian/{id}/pdf',
     [DashboardController::class, 'downloadPdf']
 );
+Route::get(
+    '/admin/penilaian/{id}/upload',
+    [DashboardController::class, 'formUploadPenilaian']
+);
 
+Route::post(
+    '/admin/penilaian/{id}/upload',
+    [DashboardController::class, 'simpanDokumenPenilaian']
+);
 // ================= PESERTA =================
 
 Route::prefix('peserta')->group(function () {
@@ -150,6 +161,39 @@ Route::get(
     [PesertaAuthController::class, 'penilaian']
 );
 
+Route::get(
+    '/peserta/forgot-password',
+    [PesertaAuthController::class,
+    'showFp']
+);
+Route::post(
+    '/peserta/verify-otp',
+    [ForgotPasswordController::class,'verifyOtp']
+);
+Route::post('/test', function () {
+    dd('Form berhasil terkirim');
+});
+
+Route::post(
+    '/peserta/verify-otp',
+    [PesertaAuthController::class,
+    'verifyOtp']
+);
+Route::post(
+    '/peserta/send-otp',
+    [ForgotPasswordController::class, 'sendOtp']
+);
+Route::get(
+    '/peserta/reset-password',
+    [ForgotPasswordController::class,
+    'formResetPassword']
+);
+
+Route::post(
+    '/peserta/update-password',
+    [PesertaAuthController::class,
+    'updatePassword']
+);
 
 
 // ================= MANAJER =================
@@ -197,6 +241,7 @@ Route::post(
     [ManajerDashboardController::class,'simpanPenilaian']
 );
 
+
                     //LOGIN//
 
 Route::get('/admin/login', [AuthController::class, 'showLogin']);
@@ -210,8 +255,6 @@ Route::get('/admin/dashboard', function () {
 Route::prefix('peserta')->group(function () {
 
     Route::get('/login', [AuthController::class, 'showLogin'])->name('peserta.login');
-
-    Route::get('/register', [AuthController::class, 'showRegister'])->name('peserta.register');
 
 });
 Route::get('/peserta/home', function () {

@@ -1,44 +1,63 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-    <title>Upload Form Penilaian Final</title>
+    <title>Upload PDF Penilaian</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-
 <body class="peserta-body">
 
-<div class="peserta-content">
+<div class="upload-container">
 
-    <a href="/admin/penilaian">
-        ← Kembali
-    </a>
+<a href="/admin/penilaian" class="kembali-btn">
+    ← Kembali
+</a>
 
-    <h2>Upload Form Penilaian Final</h2>
+<h2 class="upload-title">
+    Upload PDF Penilaian Final
+</h2>
 
-    <form
-        action="/admin/penilaian/upload/{{ $penilaian->id }}"
-        method="POST"
-        enctype="multipart/form-data">
+<div class="upload-info">
 
-        @csrf
+    <p>
+        <strong>Nama Peserta :</strong>
+        {{ $penilaian->pendaftaran->nama_lengkap }}
+    </p>
 
-        <label>
-            Upload PDF Penilaian Final
-        </label>
+    <p>
+        <strong>Departemen :</strong>
+        {{ $penilaian->pendaftaran->departemen }}
+    </p>
 
-        <input
-            type="file"
-            name="dokumen_penilaian"
-            accept=".pdf"
-            required>
+</div>
 
-        <br><br>
+<form
+    action="/admin/penilaian/{{ $penilaian->id }}/upload"
+    method="POST"
+    enctype="multipart/form-data">
 
-        <button type="submit">
-            Simpan
-        </button>
+    @csrf
 
-    </form>
+    <label class="upload-label">
+        Pilih Dokumen PDF
+    </label>
+
+    <input
+        type="file"
+        name="dokumen_penilaian"
+        accept=".pdf"
+        required
+        class="upload-file">
+
+    <button
+        type="submit"
+        class="upload-btn">
+
+        Upload PDF Final
+
+    </button>
+
+</form>
 
 </div>
 
