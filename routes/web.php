@@ -194,6 +194,10 @@ Route::post(
     [PesertaAuthController::class,
     'updatePassword']
 );
+Route::post(
+    '/admin/penilaian/selesai/{id}',
+    [AdminDashboardController::class, 'selesaiPenilaian']
+);
 
 
 // ================= MANAJER =================

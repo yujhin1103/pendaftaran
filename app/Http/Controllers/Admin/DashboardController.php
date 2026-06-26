@@ -114,19 +114,21 @@ public function prosesTerima(Request $request, $id)
 }
 public function peserta(Request $request)
 {
-    // Jangan otomatis mengubah kolom status di database berdasarkan tanggal.
-    // Tampilkan kondisi "Melebihi Batas" hanya di tampilan saat diperlukan.
     $query = Pendaftaran::query();
 
-    // Default filter: tampilkan peserta yang relevan (Diterima, Melebihi Batas, Alumni)
-    $query->whereIn('status', ['Diterima', 'Melebihi Batas', 'Alumni']);
+    $query->whereIn('status', [
+        'Diterima',
+        'Melebihi Batas'
+    ]);
 
     if ($request->search) {
+
         $query->where(
             'nama_lengkap',
             'like',
             '%' . $request->search . '%'
         );
+
     }
 
     $peserta = $query->get();
@@ -240,11 +242,12 @@ public function historiPendaftar()
 
 public function penilaian(Request $request)
 {
-    $query = \App\Models\Penilaian::with('pendaftaran');
+    $query = Penilaian::with('pendaftaran')
+        ->where('status_selesai',0);
 
     if ($request->search) {
-        $query->whereHas('pendaftaran', function($q) use ($request) {
-            $q->where('nama_lengkap', 'like', '%' . $request->search . '%');
+        $query->whereHas('pendaftaran', function ($q) use ($request) {
+            $q->where('nama_lengkap', 'like', '%'.$request->search.'%');
         });
     }
 
@@ -312,7 +315,7 @@ public function formUploadPenilaian($id)
         'admin.upload_penilaian',
         compact('penilaian')
     );
-}
+}   
 public function simpanDokumenPenilaian(Request $request, $id)
 {
     $request->validate([
@@ -350,5 +353,16 @@ public function downloadPdf($id)
         $penilaian->pendaftaran->nama_lengkap .
         '.pdf'
     );
+}
+public function selesaiPenilaian($id)
+{
+    $penilaian = Penilaian::findOrFail($id);
+
+    $penilaian->status_selesai = 1;
+
+    $penilaian->save();
+
+    return redirect('/admin/penilaian')
+        ->with('success', 'Penilaian berhasil diselesaikan.');
 }
 }

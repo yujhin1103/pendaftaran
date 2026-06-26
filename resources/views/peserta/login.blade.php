@@ -9,9 +9,9 @@
 </head>
 
 <body class="login-peserta-body">
-    <a href="/peserta/dashboard" class="back-dashboard">
-        ← Kembali ke Dashboard
-    </a>
+    <a href="/peserta/dashboard" class="back-btn">
+    ❮
+</a>
 
 <div class="login-container">
 

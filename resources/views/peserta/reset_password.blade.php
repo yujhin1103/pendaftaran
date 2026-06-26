@@ -2,47 +2,63 @@
 <html>
 <head>
     <title>Reset Password</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body>
 
-<div class="card">
-    <h2>Set your new password</h2>
-    <p class="subtitle">Create a new password. Ensure it differs from previous ones for security</p>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">{{ $errors->first() }}</div>
-    @endif
+<body class="reset-body">
+    <a href="/peserta/login" class="back-dashboard">
+        ❮
+    </a>
 
-    @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+<div class="reset-card">
+
+    <h1 class="reset-title">
+        Set your new password
+    </h1>
+
+    <p class="reset-subtitle">
+        Create a new password. Ensure it differs from previous ones for security
+    </p>
 
     <form method="POST" action="/peserta/update-password">
         @csrf
 
-        <label>Password</label>
-        <div class="input-wrap">
-            <input type="password" name="password" id="pw1" placeholder="enter new password" required>
-            <button type="button" class="toggle-eye" onclick="togglePw('pw1')">👁</button>
-        </div>
+        <label class="reset-label">
+            Password
+        </label>
 
-        <label>Confirm Password</label>
-        <div class="input-wrap">
-            <input type="password" name="password_confirmation" id="pw2" placeholder="re- enter password" required>
-            <button type="button" class="toggle-eye" onclick="togglePw('pw2')">👁</button>
-        </div>
+        <input
+            type="password"
+            name="password"
+            class="reset-input"
+            placeholder="Enter new password"
+        >
 
-        <button type="submit" class="btn">Update Password</button>
+        <label class="reset-label">
+            Confirm Password
+        </label>
+
+        <input
+            type="password"
+            name="password_confirmation"
+            class="reset-input"
+            placeholder="Re-enter password"
+        >
+
+        <button
+            type="submit"
+            class="reset-btn"
+        >
+            Update Password
+        </button>
+
     </form>
-</div>
 
-<script>
-    function togglePw(id) {
-        const input = document.getElementById(id);
-        input.type = input.type === 'password' ? 'text' : 'password';
-    }
-</script>
+</div>
 
 </body>
 </html>

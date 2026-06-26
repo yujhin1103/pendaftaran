@@ -1,121 +1,211 @@
-/* =====================
-   GLOBAL
-===================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Barlow Condensed', sans-serif;
+/* --- RESET & BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#f5f5f5;
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #333333;
+    line-height: 1.6;
 }
 
-/* =====================
-   HEADER PESERTA
-===================== */
-
-.header{
-    height:75px;
-    background:white;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 25px;
-
-    border-bottom:1px solid #ddd;
+/* --- HEADER --- */
+.header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.welcome{
-    font-size:20px;
-    color:#333;
+.welcome {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #666;
+    letter-spacing: 0.5px;
 }
 
-.logo{
-    flex:1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.logo img {
+    height: 45px;
+    object-fit: contain;
 }
 
-.logo img{
-    height:45px;
-    width:auto;
+.login-btn {
+    background-color: #A38A53; /* Emas Royal Ambarrukmo */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 
-.login-area{
-    width:180px;
-    display:flex;
-    justify-content:flex-end;
+.login-btn:hover {
+    background-color: #867041;
+    box-shadow: 0 4px 12px rgba(163, 138, 83, 0.3);
 }
 
-.login-btn{
-    text-decoration:none;
-    background:#8B7D4B;
-    color:white;
-
-    padding:8px 25px;
-
-    border-radius:20px;
-
-    font-size:20px;
-
-    transition:0.3s;
+/* --- HERO BANNER --- */
+.banner {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.login-btn:hover{
-    background:#6F6240;
+.banner-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
 }
 
-/* =====================
-   BANNER
-===================== */
-
-.banner{
-    height:250px;
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+.banner-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
-/* =====================
-   INFO
-===================== */
-
-.info-box{
-    background:black;
-    color:white;
-
-    padding:20px 25px;
+.banner-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
 }
 
-.info-box p{
-    font-size:20px;
+/* --- CONTAINER UTAMA --- */
+.container {
+    max-width: 1100px;
+    margin: -50px auto 60px auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
 }
 
-/* =====================
-   RULES
-===================== */
-
-.rules{
-    background:white;
-    padding:25px;
+/* --- INFO BAR --- */
+.info-box {
+    background-color: #ffffff;
+    border-left: 4px solid #A38A53;
+    padding: 20px 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.rules h2{
-    font-size:32px;
-    margin-bottom:15px;
+.info-box i {
+    color: #A38A53;
+    font-size: 1.4rem;
 }
 
-.rules p{
-    font-size:20px;
-    margin-bottom:15px;
-    line-height:1.5;
+.info-box p {
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 500;
+}
+
+/* --- CARDS & GRID SECTION --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 35px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #222;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 12px;
+}
+
+.card h2 i {
+    color: #A38A53;
+    font-size: 1.3rem;
+}
+
+/* --- CUSTOM LIST ITEMS --- */
+.custom-list {
+    list-style: none;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 18px;
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.custom-list li:last-child {
+    margin-bottom: 0;
+}
+
+.custom-list li i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: #A38A53;
+    font-size: 0.95rem;
+}
+
+.custom-list li strong {
+    color: #222;
+    display: block;
+    font-size: 0.98rem;
+    margin-bottom: 2px;
+}
+
+/* --- FOOTER --- */
+.dashboard-footer {
+    background-color: #1a1a1a;
+    color: #888888;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.85rem;
+    border-top: 3px solid #A38A53;
+    letter-spacing: 0.5px;
+}
+
+/* --- RESPONSIVE LAYOUT (MOBILE) --- */
+@media (max-width: 768px) {
+    .grid-container { 
+        grid-template-columns: 1fr; 
+    }
+    .header { 
+        padding: 15px 4%; 
+    }
+    .banner-content h1 { 
+        font-size: 2rem; 
+    }
 }
 
 /* =====================
@@ -2024,17 +2114,23 @@ body{
    LOGIN PESERTA
 ===================== */
 
-.login-peserta-body{
-    margin:0;
-    padding:0;
-    font-family:'Barlow Condensed', sans-serif;
-
-    background-image:url('/images/kamar.jpg');
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+.login-body{
 
     min-height:100vh;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.45),
+            rgba(0,0,0,.45)
+        ),
+        url("../img/bg-login.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
 }
 
 .login-container{
@@ -2047,10 +2143,16 @@ body{
 }
 
 .welcome-title{
-    margin-top:20px;
-    color:#e8e4cc;
-    font-size:48px;
+
+    color:#fff;
+
+    text-shadow:
+        0 3px 10px rgba(0,0,0,.7);
+
+    font-size:64px;
+
     font-weight:700;
+
 }
 
 .login-box{
@@ -2131,33 +2233,54 @@ body{
 
     cursor:pointer;
 }
-.back-dashboard{
-    position: fixed;
-    top: 20px;
-    left: 20px;
+.back-btn{
 
-    text-decoration: none;
-    color: #6f6a4f;
+    position:absolute;
 
-    background: rgba(248,248,245,0.9);
+    top:25px;
 
-    padding: 10px 18px;
+    left:25px;
 
-    border-radius: 10px;
+    display:flex;
 
-    font-size: 22px;
-    font-weight: 600;
+    align-items:center;
 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    gap:8px;
 
-    transition: 0.3s;
+    padding:10px 18px;
 
-    z-index: 999;
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    backdrop-filter:blur(10px);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-family:'Barlow Condensed',sans-serif;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    border-radius:8px;
+
+    transition:.3s ease;
+
 }
 
-.back-dashboard:hover{
-    background: #ffffff;
-    transform: translateX(-3px);
+.back-btn:hover{
+
+    background:#918861;
+
+    border-color:#918861;
+
+    color:#fff;
+
+    transform:translateX(-5px);
+
 }
 
 /* =====================
@@ -2382,437 +2505,781 @@ body{
     background:#817a55;
     color:white;
 }
-/* =====================
-   HOME PESERTA
-===================== */
-
-body{
-    margin:0;
-    padding:0;
-    font-family:'Barlow Condensed', sans-serif;
-    background:#f5f5f5;
+/* --- MENU UTAMA & HEADER HOME --- */
+.home-header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
 }
 
-/* HEADER */
-
-.home-header{
-    height:85px;
-    background:#ffffff;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 25px;
-
-    border-bottom:2px solid #ddd;
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.header-left p{
-    margin:0;
-    font-size:18px;
+/* User Info Pojok Kiri */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
 }
 
-.header-left h3{
-    margin:0;
-    font-size:22px;
-    font-weight:400;
+.user-avatar {
+    width: 38px;
+    height: 38px;
+    background-color: #f0ecdf;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #A38A53;
+    font-size: 1.1rem;
+    border: 1px solid rgba(163, 138, 83, 0.2);
 }
 
-.header-logo img{
-    height:55px;
+.user-text span {
+    font-size: 0.75rem;
+    color: #888888;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.header-menu{
-    display:flex;
-    gap:25px;
+.user-text h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222222;
 }
 
-.header-menu a{
-    text-decoration:none;
-    color:#333;
-    font-size:20px;
+/* Logo Tengah */
+.header-logo img {
+    height: 42px;
+    object-fit: contain;
 }
 
-.header-menu a:hover{
-    color:#9a9167;
+/* Menu Navigasi Kanan */
+.header-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* BANNER */
-
-.banner img{
-    width:100%;
-    height:280px;
-    object-fit:cover;
+.menu-item {
+    text-decoration: none;
+    color: #555555;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
 }
 
-/* INFO HITAM */
-
-.info-box{
-    background:black;
-    color:white;
-
-    padding:20px 25px;
-
-    font-size:22px;
-    line-height:1.5;
+.menu-item i {
+    font-size: 0.85rem;
+    opacity: 0.8;
 }
 
-/* CONTENT */
-
-.content-box{
-    background:white;
-
-    padding:30px;
-
-    min-height:350px;
+.menu-item:hover {
+    color: #A38A53;
+    background-color: #fbfbfa;
 }
 
-.content-box h2{
-    margin-top:0;
-
-    font-size:40px;
-    color:#222;
+.menu-item.active {
+    color: #A38A53;
+    background-color: #f9f6f0;
+    font-weight: 600;
 }
 
-.content-box p{
-    font-size:24px;
-    line-height:1.6;
-
-    margin-bottom:20px;
-
-    max-width:900px;
-}
-/* =========================
-   DEPARTEMEN PESERTA
-========================= */
-
-.departemen-list {
-    max-width: 1000px;
-    margin: 40px auto;
+/* Tombol Keluar Khusus */
+.menu-item.btn-logout {
+    color: #c5221f;
+    background-color: #fff5f5;
+    margin-left: 10px;
 }
 
-.departemen-list .departemen-card {
-    background: rgb(3, 0, 0);
-    border-left: 8px solid #8b5e3c;
+.menu-item.btn-logout:hover {
+    background-color: #fce8e6;
+    color: #a51d1a;
 }
 
-.departemen-list .departemen-card h3 {
-    color: #5b3a29;
+/* --- BANNER DASHBOARD HOME --- */
+.banner-home {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.departemen-list .departemen-card p {
-    font-size: 18px;
+.banner-home-content {
+    color: #ffffff;
+    padding: 0 20px;
 }
 
-
-/* ==========================
-   HALAMAN DEPARTEMEN PESERTA
-========================== */
-
-.departemen-container{
-    width:95%;
-    margin:30px auto;
+.banner-home-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
 }
 
-.judul-departemen{
-    color:#5b3a29;
-    font-size:38px;
-    margin-bottom:10px;
+.banner-home-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.subjudul-departemen{
-    color:#666;
-    font-size:18px;
-    margin-bottom:30px;
+/* --- WRAPPER KONTEN UTAMA --- */
+.main-container {
+    max-width: 1140px;
+    margin: -40px auto 60px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
 }
 
-/* 8 KOLOM */
-
-.departemen-grid{
-    display:grid;
-    grid-template-columns:repeat(8,1fr);
-    gap:15px;
+/* --- RESPONSIVE LAYOUT (MOBILE BAR) --- */
+@media (max-width: 992px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .header-left {
+        justify-content: center;
+        min-width: auto;
+    }
+    .header-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .banner-home {
+        height: 240px;
+    }
+    .banner-home-content h1 {
+        font-size: 1.8rem;
+    }
+    .banner-home-content p {
+        font-size: 0.85rem;
+    }
+}
+/* --- CONTAINER DEPARTEMEN --- */
+.departemen-container {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.02);
 }
 
-/* CARD */
-
-.departemen-card{
-    background:#ffffff;
-    border-radius:12px;
-    padding:15px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
-    border-top:5px solid #8b5e3c;
+.departemen-header-text {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.departemen-card h3{
-    font-size:20px;
-    color:#5b3a29;
-    margin-bottom:15px;
-    min-height:50px;
+.judul-departemen {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #222222;
+    margin-bottom: 8px;
 }
 
-.info{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:8px;
-    font-size:16px;
+.subjudul-departemen {
+    font-size: 0.95rem;
+    color: #777777;
 }
 
-.info span:last-child{
-    font-weight:600;
+/* --- GRID SYSTEM --- */
+.departemen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
 }
 
-/* STATUS */
-
-.status-tersedia{
-    color:green;
-    font-weight:bold;
+/* --- KARTU DEPARTEMEN (CARD) --- */
+.departemen-card {
+    background: #fdfdfd;
+    border: 1px solid #eeeeee;
+    border-radius: 6px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.status-full{
-    color:red;
-    font-weight:bold;
-}
-/* ==========================
-   FORM PENDAFTARAN MAGANG
-========================== */
-
-.daftar-body{
-
-    background-image:url('/images/kasul.jpg');
-    background-size:cover;
-    background-position:center;
-
-    min-height:100vh;
-
-    font-family:'Barlow Condensed',sans-serif;
+.departemen-card:hover {
+    transform: translateY(-5px);
+    border-color: #A38A53;
+    box-shadow: 0 8px 25px rgba(163, 138, 83, 0.1);
 }
 
-.daftar-container{
-
-    width:90%;
-    max-width:1200px;
-
-    margin:30px auto;
-
-    background:rgba(255,255,255,.95);
-
-    padding:30px;
-
-    position:relative;
+.card-icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: #f9f6f0;
+    color: #A38A53;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px auto;
+    font-size: 1.3rem;
 }
 
-.back-btn{
-
-    position:absolute;
-
-    left:20px;
-    top:20px;
-
-    width:50px;
-    height:50px;
-
-    background:#b4ae82;
-
-    border-radius:50%;
-
-    text-decoration:none;
-
-    color:black;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:30px;
+.departemen-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #222222;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-.top-form{
-
-    display:flex;
-
-    gap:50px;
-
-    margin-top:50px;
+/* Informasi Baris */
+.departemen-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px dashed #e9e9e9;
+    font-size: 0.88rem;
+    color: #666666;
 }
 
-.foto-section{
-
-    width:300px;
+.info-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.upload-foto{
-    width:180px;
-    height:240px;
-
-    border:1px solid #999;
-    margin-top:20px;
-
-    overflow:hidden;
+.info-label i {
+    font-size: 0.8rem;
+    color: #999999;
 }
 
-.identitas-section{
-
-    flex:1;
+.text-bold {
+    font-weight: 600;
+    color: #222222;
 }
 
-.form-group{
-
-    display:flex;
-
-    align-items:center;
-
-    margin-bottom:15px;
+/* --- BADGE STATUS --- */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
 }
 
-.form-group label{
-
-    width:180px;
-
-    font-size:22px;
+.status-tersedia {
+    background-color: #e6f4ea;
+    color: #1e7e34;
 }
 
-.form-group input,
-.form-group select{
-
-    flex:1;
-
-    height:45px;
-
-    border:1px solid #999;
-
-    padding:10px;
+.status-full {
+    background-color: #fce8e6;
+    color: #c5221f;
 }
 
-.form-group-full{
-
-    display:flex;
-
-    align-items:center;
-
-    margin-bottom:15px;
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 576px) {
+    .departemen-container {
+        padding: 24px 16px;
+    }
+    .judul-departemen {
+        font-size: 1.8rem;
+    }
+}
+/* --- CONTAINER FORM REGISTRASI --- */
+.form-registration-container {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.02);
 }
 
-.form-group-full label{
-
-    width:250px;
-
-    font-size:22px;
+.form-header-text {
+    border-bottom: 2px solid #f5f5f5;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
 }
 
-.form-group-full input{
-
-    flex:1;
-
-    height:45px;
-
-    border:1px solid #999;
-
-    padding:10px;
+.form-header-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #222222;
 }
 
-.upload-row{
-
-    display:flex;
-
-    align-items:center;
-
-    margin-bottom:20px;
+.form-header-text p {
+    font-size: 0.9rem;
+    color: #777777;
+    margin-top: 4px;
 }
 
-.upload-row label{
-
-    width:250px;
-
-    font-size:22px;
+/* --- GRID LAYOUT REGISTER --- */
+.registration-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
 }
 
-.btn-area{
-
-    text-align:right;
-
-    margin-top:20px;
+/* --- SEKTOR KIRI: FOTO --- */
+.column-photo {
+    text-align: center;
+    border-right: 1px solid #f0f0f0;
+    padding-right: 20px;
 }
 
-.btn-area button{
-
-    background:#99956c;
-
-    color:white;
-
-    border:none;
-
-    width:180px;
-
-    height:55px;
-
-    border-radius:15px;
-
-    font-size:28px;
-
-    cursor:pointer;
-}
-.preview-foto{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-    margin:0;
-    border:none;
-}
-/* =========================
-   PROFILE PESERTA
-========================= */
-.profile-container{
-    width:90%;
-    max-width:1000px;
-    margin:50px auto;
+.input-label-main {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 4px;
 }
 
-.profile-container h1{
-    margin-bottom:30px;
-    color:#333;
+.photo-instruction {
+    font-size: 0.78rem;
+    color: #888888;
+    margin-bottom: 15px;
+    line-height: 1.3;
 }
 
-.profile-card{
-    background:#fff;
-    border-radius:12px;
-    padding:30px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-
-    display:flex;
-    gap:40px;
-    align-items:flex-start;
+.photo-preview-box {
+    width: 150px;
+    height: 200px; /* Rasio Pas Foto 3x4 */
+    margin: 0 auto 20px auto;
+    border: 2px dashed #cccccc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    background-color: #fafafa;
 }
 
-.profile-photo img{
-    width:180px;
-    height:240px;
-    object-fit:cover;
-
-    border-radius:10px;
-    border:1px solid #ccc;
+.photo-preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.profile-info{
-    flex:1;
+.photo-overlay-icon {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.profile-item{
-    margin-bottom:20px;
+.photo-preview-box:hover .photo-overlay-icon {
+    opacity: 1;
 }
 
-.profile-item label{
-    display:block;
-    font-weight:600;
-    color:#666;
-    margin-bottom:5px;
+/* Tombol Aksi File */
+.photo-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
 
-.profile-item p{
-    color:#222;
-    font-size:18px;
+.btn-action-photo {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 180px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-upload-file {
+    background-color: #f4efe3;
+    color: #A38A53;
+    border: 1px solid rgba(163, 138, 83, 0.3);
+}
+
+.btn-upload-file:hover {
+    background-color: #A38A53;
+    color: #ffffff;
+}
+
+.btn-delete-file {
+    background-color: #fff5f5;
+    color: #c5221f;
+    border: 1px solid rgba(197, 34, 31, 0.15);
+}
+
+.btn-delete-file:hover {
+    background-color: #c5221f;
+    color: #ffffff;
+}
+
+/* --- SEKTOR KANAN: INPUT FIELD --- */
+.column-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-group-row {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group-row label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #444444;
+    margin-bottom: 8px;
+}
+
+.form-group-row input[type="text"],
+.form-group-row input[type="email"],
+.form-group-row select,
+.form-group-row textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #333333;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.form-group-row input:focus,
+.form-group-row select:focus,
+.form-group-row textarea:focus {
+    outline: none;
+    border-color: #A38A53;
+    box-shadow: 0 0 0 3px rgba(163, 138, 83, 0.15);
+}
+
+.form-group-row textarea {
+    resize: vertical;
+}
+
+/* Tombol Simpan Form */
+.form-submit-area {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+    text-align: right;
+}
+
+.btn-submit-registration {
+    background-color: #A38A53;
+    color: #ffffff;
+    border: none;
+    padding: 14px 35px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.btn-submit-registration:hover {
+    background-color: #867041;
+    box-shadow: 0 4px 15px rgba(163, 138, 83, 0.3);
+}
+
+/* --- RESPONSIVE MOBILE REGISTER --- */
+@media (max-width: 768px) {
+    .registration-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .column-photo {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-right: 0;
+        padding-bottom: 25px;
+    }
+    .form-submit-area {
+        text-align: center;
+    }
+    .btn-submit-registration {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* --- SECTION UPLOAD BERKAS CV & SURAT --- */
+.document-upload-section {
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 2px dashed #f0f0f0;
+}
+
+.section-sub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: #222222;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-sub-title i {
+    color: #A38A53;
+}
+
+.file-input-wrapper {
+    margin-bottom: 18px;
+    background: #fafafa;
+    padding: 16px;
+    border: 1px solid #e3e3e3;
+    border-radius: 6px;
+}
+
+.file-input-wrapper label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444444;
+    margin-bottom: 8px;
+}
+
+.file-input-wrapper label i {
+    color: #A38A53;
+    margin-right: 4px;
+}
+
+.file-input-wrapper input[type="file"] {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #555555;
+}
+
+.file-hint {
+    display: block;
+    font-size: 0.75rem;
+    color: #999999;
+    margin-top: 5px;
+}
+/* --- PROFILE PAGE MASTER LAYOUT --- */
+.profile-page-wrapper {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* --- KARTU PROFIL KIRI --- */
+.profile-side-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 30px 24px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.01);
+    text-align: center;
+}
+
+.profile-photo-wrapper {
+    width: 140px;
+    height: 185px; /* Rasio pas foto 3x4 elegan */
+    margin: 0 auto 20px auto;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 3px solid #ffffff;
+    outline: 1px solid #e0e0e0;
+}
+
+.profile-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-user-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #222222;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.profile-user-email {
+    font-size: 0.85rem;
+    color: #777777;
+    margin-bottom: 25px;
+}
+
+.profile-user-email i {
+    color: #A38A53;
+    margin-right: 3px;
+}
+
+/* Mini Meta List */
+.profile-meta-mini {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+    text-align: left;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 0.88rem;
+}
+
+.meta-label {
+    color: #666666;
+    font-weight: 500;
+}
+
+.meta-value-text {
+    font-weight: 600;
+    color: #222222;
+    max-width: 180px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Kotak Kontrak Aktif */
+.profile-active-period-box {
+    margin-top: 20px;
+    background-color: #fbf9f5;
+    border: 1px dashed rgba(163, 138, 83, 0.3);
+    padding: 15px;
+    border-radius: 6px;
+    text-align: left;
+}
+
+.period-item label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #A38A53;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.period-item p {
+    font-size: 0.88rem;
+    color: #333333;
+    margin: 0;
+}
+
+/* --- KARTU RIWAYAT DETAIL KANAN --- */
+.profile-main-details {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 35px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.01);
+}
+
+.section-detail-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #222222;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-detail-title i {
+    color: #A38A53;
+    font-size: 1.3rem;
+}
+
+.history-detail-card {
+    background: #fafafa;
+    border: 1px solid #eeeeee;
+    border-radius: 6px;
+    padding: 10px 24px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.92rem;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: #555555;
+    font-weight: 500;
+}
+
+.detail-value {
+    color: #222222;
+    font-weight: 600;
+    text-align: right;
+}
+
+.text-gold-theme {
+    color: #A38A53;
+}
+
+/* Empty State */
+.empty-history-box {
+    text-align: center;
+    padding: 40px 20px;
+    color: #888888;
+}
+
+.empty-history-box i {
+    font-size: 3rem;
+    color: #dddddd;
+    margin-bottom: 15px;
+}
+
+/* --- RESPONSIVE PROFILE BREAKPOINT --- */
+@media (max-width: 992px) {
+    .profile-page-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
 /* =========================
    HALAMAN DEPARTEMEN ADMIN
@@ -3264,121 +3731,74 @@ body{
     margin-bottom:20px;
     text-align:center;
 }
-/* ===========================
-   reset password*/
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ==========================
+   RESET PASSWORD
+========================== */
+
+.reset-body{
+    min-height:100vh;
+    background:url('/images/kasul.jpg');
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:'Barlow Condensed',sans-serif;
 }
 
-body {
-    min-height: 100vh;
-    background: url('/images/kasul.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
+.reset-card{
+    width:650px;
+    background:#f8f8f5;
+    border-radius:20px;
+    padding:50px;
 }
 
-.card {
-    background: rgba(245, 243, 235, 0.92);
-    border-radius: 14px;
-    padding: 2.5rem;
-    width: 420px;
-    max-width: 90%;
+.reset-title{
+    text-align:center;
+    color:#7d7758;
+    font-size:52px;
+    margin-bottom:20px;
 }
 
-h2 {
-    font-size: 22px;
-    font-weight: 500;
-    text-align: center;
-    color: #2c2c2a;
-    margin-bottom: 0.5rem;
+.reset-subtitle{
+    color:#999;
+    font-size:22px;
+    margin-bottom:20px;
 }
 
-.subtitle {
-    font-size: 13px;
-    color: #888780;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
+.reset-label{
+    display:block;
+    font-size:24px;
+    margin-bottom:8px;
 }
 
-label {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    color: #2c2c2a;
-    margin-bottom: 6px;
+.reset-input{
+    width:100%;
+    height:55px;
+
+    border:1px solid #cfc7a8;
+    border-radius:15px;
+
+    padding:0 20px;
+    font-size:22px;
+
+    margin-bottom:20px;
 }
 
-.input-wrap {
-    position: relative;
-    margin-bottom: 1rem;
-}
+.reset-btn{
+    width:100%;
+    height:60px;
 
-.input-wrap input {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.55);
-    border: 1px solid rgba(180, 170, 140, 0.5);
-    border-radius: 8px;
-    padding: 10px 44px 10px 14px;
-    font-size: 14px;
-    color: #888780;
-    outline: none;
-}
+    border:none;
+    border-radius:15px;
 
-.input-wrap input:focus {
-    border-color: rgba(140, 130, 100, 0.8);
-    background: rgba(255, 255, 255, 0.75);
-}
+    background:#8a8561;
+    color:white;
 
-.toggle-eye {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #888780;
-    font-size: 18px;
-}
-
-.btn {
-    width: 100%;
-    padding: 12px;
-    background: rgba(195, 185, 145, 0.75);
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #4a3e1a;
-    cursor: pointer;
-    margin-top: 0.5rem;
-}
-
-.btn:hover {
-    background: rgba(175, 165, 125, 0.9);
-}
-
-.alert {
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-size: 13px;
-    margin-bottom: 1rem;
-}
-
-.alert-danger {
-    background: #fee;
-    color: #a32d2d;
-    border: 1px solid #f7c1c1;
-}
-
-.alert-success {
-    background: #eaf3de;
-    color: #3b6d11;
-    border: 1px solid #c0dd97;
+    font-size:28px;
+    cursor:pointer;
 }
 /* ==========================
    UPLOAD PDF PENILAIAN
@@ -3722,157 +4142,157 @@ label {
     flex: 1;
 }
 
-.signature-section {
-    clear: both;
-    display: block;
-    width: 100%;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    padding-top: 30px;
-    border-top: 2px solid #ddd;
-}
+    .signature-section {
+        clear: both;
+        display: block;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        padding-top: 30px;
+        border-top: 2px solid #ddd;
+    }
 
-.signature-form {
-    margin-top: 30px;
-}
+    .signature-form {
+        margin-top: 30px;
+    }
 
-.signature-info {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 30px;
-}
+    .signature-info {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 30px;
+    }
 
-.signature-place,
-.signature-date {
-    padding: 8px 0;
-    border: none;
-    border-bottom: 1px solid #333;
-    font-size: 14px;
-    font-family: 'Barlow Condensed', sans-serif;
-    background: transparent;
-    outline: none;
-}
+    .signature-place,
+    .signature-date {
+        padding: 8px 0;
+        border: none;
+        border-bottom: 1px solid #333;
+        font-size: 14px;
+        font-family: 'Barlow Condensed', sans-serif;
+        background: transparent;
+        outline: none;
+    }
 
-.signature-place {
-    width: 150px;
-}
+    .signature-place {
+        width: 150px;
+    }
 
-.signature-place::placeholder {
-    color: #999;
-}
+    .signature-place::placeholder {
+        color: #999;
+    }
 
-.signature-date {
-    width: 150px;
-}
+    .signature-date {
+        width: 150px;
+    }
 
-.signature-upload {
-    margin-bottom: 20px;
-}
+    .signature-upload {
+        margin-bottom: 20px;
+    }
 
-.signature-upload input[type="file"] {
-    display: none;
-}
+    .signature-upload input[type="file"] {
+        display: none;
+    }
 
-.upload-label {
-    display: inline-block;
-    padding: 8px 15px;
-    background: #f5f5f5;
-    border: 1px dashed #999;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 13px;
-    color: #666;
-    transition: 0.3s;
-}
+    .upload-label {
+        display: inline-block;
+        padding: 8px 15px;
+        background: #f5f5f5;
+        border: 1px dashed #999;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 13px;
+        color: #666;
+        transition: 0.3s;
+    }
 
-.upload-label:hover {
-    background: #e8e8e8;
-    border-color: #666;
-}
+    .upload-label:hover {
+        background: #e8e8e8;
+        border-color: #666;
+    }
 
-/* Signature Container untuk dua kolom */
-.signature-container {
-    display: flex;
-    gap: 60px;
-    margin-top: 30px;
-    justify-content: space-around;
-}
+    /* Signature Container untuk dua kolom */
+    .signature-container {
+        display: flex;
+        gap: 60px;
+        margin-top: 30px;
+        justify-content: space-around;
+    }
 
-.signature-column {
-    flex: 1;
-    text-align: center;
-    max-width: 300px;
-    margin: 0 auto;
-}
+    .signature-column {
+        flex: 1;
+        text-align: center;
+        max-width: 300px;
+        margin: 0 auto;
+    }
 
-.signature-column .signature-upload {
-    margin-bottom: 15px;
-}
+    .signature-column .signature-upload {
+        margin-bottom: 15px;
+    }
 
-.signature-name {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 30px;
-}
+    .signature-name {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+    }
 
-.signature-name input[type="text"] {
-    padding: 8px 10px;
-    border: none;
-    border-bottom: 1px solid #333;
-    font-size: 12px;
-    font-family: 'Barlow Condensed', sans-serif;
-    background: transparent;
-    outline: none;
-    text-align: center;
-}
+    .signature-name input[type="text"] {
+        padding: 8px 10px;
+        border: none;
+        border-bottom: 1px solid #333;
+        font-size: 12px;
+        font-family: 'Barlow Condensed', sans-serif;
+        background: transparent;
+        outline: none;
+        text-align: center;
+    }
 
-.signature-name input[type="text"]::placeholder {
-    color: #999;
-}
+    .signature-name input[type="text"]::placeholder {
+        color: #999;
+    }
 
-/* Preview Container Styling */
-.preview-container {
-    display: none;
-    margin: 25px 0;
-    text-align: center;
-    min-height: 80px;
-    padding: 15px 0;
-}
+    /* Preview Container Styling */
+    .preview-container {
+        display: none;
+        margin: 25px 0;
+        text-align: center;
+        min-height: 80px;
+        padding: 15px 0;
+    }
 
-.preview-container img {
-    display: block;
-    max-width: 120px;
-    max-height: 80px;
-    width: auto;
-    height: auto;
-    margin: 0 auto 15px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 15px;
-}
+    .preview-container img {
+        display: block;
+        max-width: 120px;
+        max-height: 80px;
+        width: auto;
+        height: auto;
+        margin: 0 auto 15px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 15px;
+    }
 
-/* =====================
-   TOMBOL KEMBALI
-===================== */
+    /* =====================
+    TOMBOL KEMBALI
+    ===================== */
 
-.btn-kembali {
-    display: inline-block;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #555;
-    font-size: 14px;
-    font-weight: 500;
-    transition: 0.3s;
-}
+    .btn-kembali {
+        display: inline-block;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
 
-.btn-kembali:hover {
-    background: #e8e8e8;
-    border-color: #999;
-    color: #333;
-}
+    .btn-kembali:hover {
+        background: #e8e8e8;
+        border-color: #999;
+        color: #333;
+    }

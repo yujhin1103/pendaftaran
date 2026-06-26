@@ -1,69 +1,202 @@
-<div class="penilaian-wrapper">
+<!DOCTYPE html>
+<html>
+<head>
 
-```
-<h1 class="penilaian-title">
-    Penilaian Peserta Magang
-</h1>
+    <title>Penilaian Peserta Magang</title>
 
-<div class="penilaian-card">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    @if($penilaian && $penilaian->dokumen_penilaian)
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-        <div class="penilaian-success">
+</head>
 
-            <h3>
-                Dokumen Penilaian Tersedia
-            </h3>
+<body class="peserta-body">
 
-            <span class="status-badge">
-                ✓ Sudah Diverifikasi
-            </span>
+    <div class="peserta-header">
 
-            <p>
-                Dokumen penilaian magang Anda telah selesai diproses dan dapat dilihat maupun diunduh.
-            </p>
+        <div class="header-user">
+            Admin
+        </div>
 
-            <div class="penilaian-btn-group">
+        <div class="header-menu">
 
-                <a
-                    href="{{ asset('storage/' . $penilaian->dokumen_penilaian) }}"
-                    target="_blank"
-                    class="penilaian-btn btn-lihat">
+            <a href="/admin/dashboard">
+                Home
+            </a>
 
-                    Lihat PDF
-
-                </a>
-
-                <a
-                    href="{{ asset('storage/' . $penilaian->dokumen_penilaian) }}"
-                    download
-                    class="penilaian-btn btn-download">
-
-                    Download PDF
-
-                </a>
-
-            </div>
+            <a href="#">
+                Logout
+            </a>
 
         </div>
 
-    @else
+    </div>
 
-        <div class="penilaian-empty">
+    <div class="peserta-content">
 
-            <h3>
-                Dokumen Belum Tersedia
-            </h3>
+        <a href="/admin/dashboard" class="kembali-link">
+            ← Kembali
+        </a>
 
-            <p>
-                Dokumen penilaian magang Anda masih dalam proses dan belum diunggah oleh admin.
-            </p>
+        <h1 class="peserta-title">
+            Penilaian Peserta Magang
+        </h1>
 
-        </div>
+        <form action="/admin/penilaian" method="GET" class="search-form">
 
-    @endif
+            <input
+                type="text"
+                name="search"
+                value="{{ request('search') }}"
+                placeholder="Cari penilaian..."
+                class="search-input"
+            >
+
+            <button type="submit" class="search-btn">
+                Cari
+            </button>
+
+        </form>
+        @if($penilaian->count() == 0)
+
+<div class="peserta-card">
+    <p>
+        Penilaian tidak ditemukan.
+    </p>
+</div>
+
+@endif
+
+        @foreach($penilaian as $data)
+
+<div class="peserta-card">
+
+    <h3>{{ $data->pendaftaran->nama_lengkap }}</h3>
+
+    <p>
+        Departemen :
+        {{ $data->pendaftaran->departemen }}
+    </p>
+
+    <p>
+        Asal Sekolah :
+        {{ $data->pendaftaran->asal_sekolah }}
+    </p>
+
+    <p>
+        Total Score :
+        <strong>{{ $data->total_score }}</strong>
+    </p>
+
+    <p>
+        Rating :
+        <strong>{{ $data->rating }}</strong>
+    </p>
+
+    <p>
+        Tanggal Penilaian :
+        {{ $data->tanggal_ttd ? date('d-m-Y', strtotime($data->tanggal_ttd)) : '-' }}
+    </p>
+
+    <p>
+    Status HRD :
+    <p>
+
+Status Dokumen :
+
+        @if(isset($data->dokumen_penilaian) && $data->dokumen_penilaian)
+
+        <span style="color:green;font-weight:bold;">
+             ✓ Sudah Diupload
+        </span>
+
+        @else
+
+        <span style="color:red;font-weight:bold;">
+             ✗ Belum Diupload
+        </span>
+
+        @endif
+
+        </p>
+
+            @if($data->tanda_tangan_hrd)
+
+                <span style="color:green;font-weight:bold;">
+                    ✓ Sudah Ditandatangani
+                </span>
+
+            @else
+
+                <span style="color:red;font-weight:bold;">
+                    ✗ Belum Ditandatangani
+                </span>
+
+            @endif
+        </p>
+
+   <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a
+            href="/admin/penilaian/{{ $data->id }}"
+            class="btn-nilai">
+
+            Lihat Detail
+
+        </a>
+
+        <a
+            href="/admin/penilaian/{{ $data->id }}/edit-hrd"
+            class="btn-nilai"
+            style="background-color: #ff9800;">
+
+            Tambah Tanda Tangan HRD
+
+        </a>
+        @if($data->tanda_tangan_manager && $data->tanda_tangan_hrd)
+
+            <a
+                href="/admin/penilaian/{{ $data->id }}/upload"
+                class="btn-nilai"
+                style="background:#4caf50;">
+
+                Upload PDF Final
+
+            </a>
+        @endif   
+        @if(
+    $data->tanda_tangan_manager &&
+    $data->tanda_tangan_hrd &&
+    $data->dokumen_penilaian
+)
+
+        <form
+        action="/admin/penilaian/selesai/{{ $data->id }}"
+        method="POST"
+        style="display:inline;">
+
+            @csrf
+
+            <button
+                type="submit"
+                class="btn-nilai"
+                style="background:#2196f3;"
+                onclick="return confirm('Penilaian sudah selesai?')">
+
+                Selesai
+
+            </button>
+
+        </form>
+
+        @endif
+    </div>
 
 </div>
-```
 
-</div>
+@endforeach
+
+    </div>
+
+</body>
+
+</html>

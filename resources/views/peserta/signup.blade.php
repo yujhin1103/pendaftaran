@@ -10,7 +10,7 @@
 
 <body class="login-peserta-body">
      <a href="/peserta/dashboard" class="back-dashboard">
-        ← Kembali ke Dashboard
+        ❮
     </a>
 
 <div class="login-container">
