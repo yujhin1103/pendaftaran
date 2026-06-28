@@ -13,6 +13,7 @@ class AuthController extends Controller
     }
     public function login(Request $request)
 {
+     dd(session()->all());
     $manajer = DB::table('manajers')
         ->where('username', $request->username)
         ->first();
@@ -24,6 +25,15 @@ class AuthController extends Controller
     if ($manajer->password != $request->password) {
         return back()->with('error', 'Username atau Password Salah');
     }
+
+    // SIMPAN SESSION
+    session()->flush();
+
+session([
+    'manajer_id' => $manajer->id,
+    'username' => $manajer->username,
+    'departemen' => $manajer->departemen,
+]);
 
     return redirect('/manajer/dashboard');
 }

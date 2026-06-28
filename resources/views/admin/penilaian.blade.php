@@ -1,202 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-
-    <title>Penilaian Peserta Magang</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penilaian Peserta Magang - Admin Panel</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
 </head>
+<body class="admin-body">
 
-<body class="peserta-body">
-
-    <div class="peserta-header">
-
-        <div class="header-user">
-            Admin
+    <div class="admin-header-nav">
+        <div class="admin-nav-container">
+            <div class="header-user">
+                <i class="fa-solid fa-user-shield"></i> Hr_admin
+            </div>
+            <div class="header-menu-admin">
+                <a href="/admin/dashboard"><i class="fa-solid fa-gauge"></i> Home</a>
+                <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
         </div>
-
-        <div class="header-menu">
-
-            <a href="/admin/dashboard">
-                Home
-            </a>
-
-            <a href="#">
-                Logout
-            </a>
-
-        </div>
-
     </div>
 
-    <div class="peserta-content">
-
-        <a href="/admin/dashboard" class="kembali-link">
-            ← Kembali
+    <div class="admin-detail-container">
+        
+        <a href="/admin/dashboard" class="admin-btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard
         </a>
 
-        <h1 class="peserta-title">
-            Penilaian Peserta Magang
-        </h1>
+        <div class="admin-page-header">
+            <h1>Penilaian Peserta Magang</h1>
+            <p>Kelola skor evaluasi kinerja, verifikasi tanda tangan dokumen, serta unggah berkas penilaian akhir.</p>
+        </div>
 
-        <form action="/admin/penilaian" method="GET" class="search-form">
+        <div class="admin-action-bar">
+            <form action="/admin/penilaian" method="GET" class="search-form-admin">
+                <div class="search-box-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input 
+                        type="text" 
+                        name="search" 
+                        value="{{ request('search') }}" 
+                        placeholder="Cari penilaian..." 
+                        class="search-input-admin"
+                    >
+                </div>
+                <button type="submit" class="search-btn-admin">Cari</button>
+            </form>
+        </div>
 
-            <input
-                type="text"
-                name="search"
-                value="{{ request('search') }}"
-                placeholder="Cari penilaian..."
-                class="search-input"
-            >
+        <div class="admin-table-card">
+            <table class="admin-data-table">
+                <thead>
+                    <tr>
+                        <th>Nama Peserta</th>
+                        <th>Departemen & Asal</th>
+                        <th style="text-align: center; width: 110px;">Skor & Rating</th>
+                        <th style="width: 150px;">Tanggal TTD</th>
+                        <th>Status Dokumen</th>
+                        <th style="text-align: center; width: 280px;">Aksi Berkas Administrasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if($penilaian->count() == 0)
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 40px; color: #a38a53;">
+                            <i class="fa-solid fa-file-signature" style="font-size: 2rem; display: block; margin-bottom: 10px;"></i>
+                            Penilaian tidak ditemukan.
+                        </td>
+                    </tr>
+                    @endif
 
-            <button type="submit" class="search-btn">
-                Cari
-            </button>
+                    @foreach($penilaian as $data)
+                    <tr>
+                        <td class="td-primary-name">
+                            {{ $data->pendaftaran->nama_lengkap }}
+                        </td>
+                        
+                        <td>
+                            <span class="admin-highlight-dept">{{ $data->pendaftaran->departemen }}</span>
+                            <div style="font-size: 0.95rem; color: #7a7167; margin-top: 2px;">
+                                <i class="fa-solid fa-graduation-cap"></i> {{ $data->pendaftaran->asal_sekolah }}
+                            </div>
+                        </td>
+                        
+                        <td style="text-align: center;">
+                            <div class="score-main-value">{{ $data->total_score }}</div>
+                            <span class="rating-sub-badge"><i class="fa-solid fa-star"></i> {{ $data->rating }}</span>
+                        </td>
+                        
+                        <td>
+                            <span class="table-date-info">
+                                <i class="fa-regular fa-calendar-check"></i> 
+                                {{ $data->tanggal_ttd ? date('d-m-Y', strtotime($data->tanggal_ttd)) : '-' }}
+                            </span>
+                        </td>
+                        
+                        <td>
+                            <div style="display: flex; flex-direction: column; gap: 5px;">
+                                @if(isset($data->dokumen_penilaian) && $data->dokumen_penilaian)
+                                    <span class="badge-status-doc doc-success"><i class="fa-solid fa-file-pdf"></i> PDF Uploaded</span>
+                                @else
+                                    <span class="badge-status-doc doc-danger"><i class="fa-solid fa-file-circle-xmark"></i> PDF Missing</span>
+                                @endif
 
-        </form>
-        @if($penilaian->count() == 0)
+                                @if($data->tanda_tangan_hrd)
+                                    <span class="badge-status-doc doc-success"><i class="fa-solid fa-pen-nib"></i> HRD Signed</span>
+                                @else
+                                    <span class="badge-status-doc doc-danger"><i class="fa-solid fa-signature"></i> HRD Unsigned</span>
+                                @endif
+                            </div>
+                        </td>
+                        
+                        <td>
+                            <div class="admin-action-grid-buttons">
+                                <a href="/admin/penilaian/{{ $data->id }}" class="admin-act-btn btn-act-detail" title="Lihat Detail Penilaian">
+                                    <i class="fa-solid fa-eye"></i> Detail
+                                </a>
 
-<div class="peserta-card">
-    <p>
-        Penilaian tidak ditemukan.
-    </p>
-</div>
+                                <a href="/admin/penilaian/{{ $data->id }}/edit-hrd" class="admin-act-btn btn-act-warning" title="Tanda Tangan HRD">
+                                    <i class="fa-solid fa-file-signature"></i> TTD HRD
+                                </a>
 
-@endif
+                                @if($data->tanda_tangan_manager && $data->tanda_tangan_hrd)
+                                    <a href="/admin/penilaian/{{ $data->id }}/upload" class="admin-act-btn btn-act-success" title="Upload PDF Final">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Upload Final
+                                    </a>
+                                @endif 
 
-        @foreach($penilaian as $data)
-
-<div class="peserta-card">
-
-    <h3>{{ $data->pendaftaran->nama_lengkap }}</h3>
-
-    <p>
-        Departemen :
-        {{ $data->pendaftaran->departemen }}
-    </p>
-
-    <p>
-        Asal Sekolah :
-        {{ $data->pendaftaran->asal_sekolah }}
-    </p>
-
-    <p>
-        Total Score :
-        <strong>{{ $data->total_score }}</strong>
-    </p>
-
-    <p>
-        Rating :
-        <strong>{{ $data->rating }}</strong>
-    </p>
-
-    <p>
-        Tanggal Penilaian :
-        {{ $data->tanggal_ttd ? date('d-m-Y', strtotime($data->tanggal_ttd)) : '-' }}
-    </p>
-
-    <p>
-    Status HRD :
-    <p>
-
-Status Dokumen :
-
-        @if(isset($data->dokumen_penilaian) && $data->dokumen_penilaian)
-
-        <span style="color:green;font-weight:bold;">
-             ✓ Sudah Diupload
-        </span>
-
-        @else
-
-        <span style="color:red;font-weight:bold;">
-             ✗ Belum Diupload
-        </span>
-
-        @endif
-
-        </p>
-
-            @if($data->tanda_tangan_hrd)
-
-                <span style="color:green;font-weight:bold;">
-                    ✓ Sudah Ditandatangani
-                </span>
-
-            @else
-
-                <span style="color:red;font-weight:bold;">
-                    ✗ Belum Ditandatangani
-                </span>
-
-            @endif
-        </p>
-
-   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a
-            href="/admin/penilaian/{{ $data->id }}"
-            class="btn-nilai">
-
-            Lihat Detail
-
-        </a>
-
-        <a
-            href="/admin/penilaian/{{ $data->id }}/edit-hrd"
-            class="btn-nilai"
-            style="background-color: #ff9800;">
-
-            Tambah Tanda Tangan HRD
-
-        </a>
-        @if($data->tanda_tangan_manager && $data->tanda_tangan_hrd)
-
-            <a
-                href="/admin/penilaian/{{ $data->id }}/upload"
-                class="btn-nilai"
-                style="background:#4caf50;">
-
-                Upload PDF Final
-
-            </a>
-        @endif   
-        @if(
-    $data->tanda_tangan_manager &&
-    $data->tanda_tangan_hrd &&
-    $data->dokumen_penilaian
-)
-
-        <form
-        action="/admin/penilaian/selesai/{{ $data->id }}"
-        method="POST"
-        style="display:inline;">
-
-            @csrf
-
-            <button
-                type="submit"
-                class="btn-nilai"
-                style="background:#2196f3;"
-                onclick="return confirm('Penilaian sudah selesai?')">
-
-                Selesai
-
-            </button>
-
-        </form>
-
-        @endif
-    </div>
-
-</div>
-
-@endforeach
+                                @if($data->tanda_tangan_manager && $data->tanda_tangan_hrd && $data->dokumen_penilaian)
+                                    <form action="/admin/penilaian/selesai/{{ $data->id }}" method="POST" style="display:inline; width: 100%;">
+                                        @csrf
+                                        <button 
+                                            type="submit" 
+                                            class="admin-act-btn btn-act-primary-submit" 
+                                            onclick="return confirm('Penilaian sudah selesai?')"
+                                        >
+                                            <i class="fa-solid fa-circle-check"></i> Selesai
+                                        </button>
+                                    </form>
+                                @endif
+                            </div>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
 
     </div>
 
 </body>
-
 </html>

@@ -15,32 +15,30 @@ class DashboardController extends Controller
         return view('manajer.dashboard');
     }
     public function penilaian(Request $request)
-    {
-        // Tampilkan peserta yang masih relevan untuk penilaian oleh manajer.
-        // Termasuk peserta dengan status: Diterima, Melebihi Batas (sudah lewat tanggal
-        // selesai tapi belum dipindahkan ke histori), atau Alumni (sudah selesai).
-        // Tampilkan peserta yang telah selesai atau relevan untuk penilaian.
-        $query = Pendaftaran::query();
+{
+    $query = Pendaftaran::query()
 
-        // Kondisi: peserta yang sudah selesai (tanggal_selesai <= hari ini)
-        // atau peserta dengan status yang relevan (Diterima, Alumni).
-        $query->where(function($q) {
-            $q->whereDate('tanggal_selesai', '<=', Carbon::today())
-              ->orWhereIn('status', ['Diterima', 'Alumni']);
-        });
+        // Hanya peserta yang masih aktif magang
+        ->whereIn('status', [
+            'Diterima',
+            'Melebihi Batas'
+        ]);
 
-        if ($request->search) {
-            $query->where(
-                'nama_lengkap',
-                'like',
-                '%' . $request->search . '%'
-            );
-        }
-
-        $peserta = $query->get();
-
-        return view('manajer.penilaian', compact('peserta'));
+    if ($request->search) {
+        $query->where(
+            'nama_lengkap',
+            'like',
+            '%' . $request->search . '%'
+        );
     }
+
+    $peserta = $query->get();
+
+    return view(
+        'manajer.penilaian',
+        compact('peserta')
+    );
+}
 public function formPenilaian($id)
 {
     $peserta = Pendaftaran::findOrFail($id);
@@ -113,19 +111,5 @@ public function simpanPenilaian(
 
     return redirect('/manajer/penilaian')
         ->with('success','Penilaian berhasil disimpan');
-}
-public function accounting()
-{
-    $peserta = Pendaftaran::where(
-        'departemen',
-        'Accounting'
-    )
-    ->where('status','Diterima')
-    ->get();
-
-    return view(
-        'manajer.accounting',
-        compact('peserta')
-    );
 }
 }

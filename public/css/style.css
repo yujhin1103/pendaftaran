@@ -336,311 +336,428 @@ body {
     font-weight:500;
     margin-bottom:5px;
 }
-/* ==================================
-   PESERTA MAGANG ADMIN
-================================== */
+/* --- IMPORT FONT BARLOW CONDENSED --- */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap');
 
-.peserta-body{
-    margin:0;
-    padding:0;
-
-    background:#d8d5b8;
-
-    font-family:'Barlow Condensed', sans-serif;
+/* --- ADMIN BASE THEME (NUANSA COKLAT & BARLOW CONDENSED) --- */
+.admin-body {
+    background-color: #fcfbfa; /* Krem sangat lembut */
+    font-family: 'Barlow Condensed', sans-serif; /* Menggunakan font pilihanmu */
+    color: #443e38; /* Coklat tua gelap untuk teks */
+    margin: 0;
+    padding: 20px;
+    letter-spacing: 0.5px; /* Menjaga keterbacaan font condensed */
 }
 
-.peserta-header{
-    height:90px;
-
-    background:white;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 25px;
-
-    border-bottom:2px solid #c7c3a3;
+.admin-detail-container {
+    max-width: 1100px;
+    margin: 30px auto;
 }
 
-.header-user{
-    font-size:22px;
-    color:#555;
+.admin-btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #a38a53; /* Emas/Coklat Ambarrukmo */
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem; /* Ukuran disesuaikan karena condensed cenderung lebih ramping */
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
-.header-menu{
-    display:flex;
-    gap:35px;
+.admin-btn-back:hover {
+    color: #6e5d36;
 }
 
-.header-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:22px;
+.admin-page-header {
+    margin-top: 15px;
+    margin-bottom: 25px;
 }
 
-.peserta-content{
-    width:95%;
-
-    margin:30px auto;
-
-    background:#f7f7f7;
-
-    min-height:700px;
-
-    padding:20px;
+.admin-page-header h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.4rem; /* Diperbesar agar terkesan megah dan tegas */
+    color: #2b2520; /* Coklat pekat */
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase; /* Karakteristik utama Barlow Condensed yang bagus untuk judul */
 }
 
-.kembali-link{
-    text-decoration:none;
-
-    color:#555;
-
-    font-size:20px;
-
-    font-weight:500;
+.admin-page-header p {
+    font-size: 1.1rem;
+    color: #7a7167;
+    margin-top: 5px;
+    font-weight: 400;
 }
 
-.peserta-title{
-    text-align:center;
-
-    color:#817a55;
-
-    font-size:60px;
-
-    margin-top:10px;
-    margin-bottom:30px;
+/* --- HEADER NAV ADMIN --- */
+.admin-header-nav {
+    background-color: #ffffff;
+    border-bottom: 2px solid #f3ece2;
+    padding: 15px 20px;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
-.search-form{
-    display:flex;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin-bottom:30px;
+.admin-nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.search-input{
-    width:400px;
-
-    height:50px;
-
-    border:1px solid #ccc;
-
-    border-radius:10px;
-
-    padding:0 15px;
-
-    font-size:20px;
-
-    font-family:'Barlow Condensed', sans-serif;
+.header-user {
+    font-weight: 600;
+    color: #a38a53;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
-.search-btn{
-    background:#817a55;
-
-    color:white;
-
-    border:none;
-
-    border-radius:10px;
-
-    padding:0 25px;
-
-    font-size:20px;
-
-    cursor:pointer;
+.header-menu-admin {
+    display: flex;
+    gap: 20px;
 }
 
-.search-btn:hover{
-    background:#6f6949;
+.header-menu-admin a {
+    text-decoration: none;
+    color: #5c534c;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.2s;
 }
 
-.peserta-card{
-    background:#c6c3a2;
-
-    border-radius:18px;
-
-    padding:15px 20px;
-
-    margin-bottom:18px;
-
-    box-shadow:0 4px 5px rgba(0,0,0,.35);
+.header-menu-admin a:hover {
+    color: #a38a53;
 }
 
-.peserta-card h3{
-    color:white;
-
-    margin:0;
-
-    font-size:24px;
+.admin-logout-link {
+    color: #b33939 !important;
 }
 
-.peserta-card p{
-    color:white;
-
-    margin-top:5px;
-
-    font-size:18px;
+/* --- BAR PENCARIAN --- */
+.admin-action-bar {
+    margin-bottom: 20px;
 }
 
-/* =====================
-   DASHBOARD ADMIN
-===================== */
-
-.admin-body{
-    background:#c7c4a6;
+.search-form-admin {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
 }
 
-.admin-header{
-    height:70px;
-    background:white;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 25px;
-
-    border-bottom:2px solid #8a8461;
+.search-box-wrapper {
+    position: relative;
+    flex: 1;
 }
 
-.admin-content{
-    width:95%;
-    min-height:600px;
-
-    background:white;
-
-    margin:20px auto;
-    padding:40px;
+.search-box-wrapper i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a38a53;
+    font-size: 1rem;
 }
 
-.menu-container{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
-    gap:25px;
+.search-input-admin {
+    width: 100%;
+    padding: 10px 12px 10px 38px;
+    border: 1px solid #e1d7c6;
+    border-radius: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    color: #443e38;
+    background-color: #ffffff;
+    outline: none;
 }
 
-.menu-btn{
-    width:220px;
-    height:45px;
-
-    background:#817a55;
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:15px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:24px;
+.search-input-admin:focus {
+    border-color: #a38a53;
 }
 
-.menu-btn:hover{
-    background:#6f6949;
+.search-btn-admin {
+    background-color: #a38a53;
+    color: #ffffff;
+    border: none;
+    padding: 0 25px;
+    border-radius: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-btn-admin:hover {
+    background-color: #8c7643;
+}
+
+/* --- TABEL DATA UTAMA --- */
+.admin-table-card {
+    background: #ffffff;
+    border: 1px solid #ede6da;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(163, 138, 83, 0.03);
+    overflow: hidden;
+}
+
+.admin-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-data-table th {
+    background-color: #fbf9f5;
+    color: #6e5d36;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 14px 18px;
+    border-bottom: 2px solid #ede6da;
+    text-align: left;
+}
+
+.admin-data-table td {
+    padding: 14px 18px;
+    font-size: 1.1rem;
+    color: #443e38;
+    border-bottom: 1px solid #f8f3eb;
+    vertical-align: middle;
+}
+
+.admin-data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.td-primary-name {
+    font-weight: 600;
+    color: #2b2520;
+    font-size: 1.15rem;
+}
+
+.admin-highlight-dept {
+    font-weight: 600;
+    color: #a38a53;
+}
+
+/* --- DETAIL KHUSUS HALAMAN PESERTA --- */
+.table-date-info {
+    font-size: 1.05rem;
+    color: #443e38;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.duration-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.9rem;
+    color: #8c7643;
+    background-color: #fbf9f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+    font-weight: 500;
+    border: 1px solid #ede6da;
+}
+
+/* --- BADGES STATUS & KONDISI --- */
+.admin-status-badge, .badge-kondisi {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.badge-success { background: #f0ebd9; color: #735f32; border: 1px solid #e3d9bd; }
+.badge-warning { background: #fdfaf2; color: #a38a53; border: 1px solid #f3ece2; }
+.badge-danger  { background: #fdf3f2; color: #b33939; }
+
+.badge-kondisi {
+    border-radius: 20px; /* Model kapsul untuk kondisi masa aktif */
+}
+.kondisi-aktif { background-color: #eaf5ea; color: #2e7d32; border: 1px solid #c8e6c9; }
+.kondisi-expired { background-color: #fdf2f2; color: #c62828; border: 1px solid #ffcdd2; }
+
+/* --- TOMBOL AKSI GROUP --- */
+.admin-action-group {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-act-btn {
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-act-detail {
+    background-color: #fbf9f5;
+    color: #a38a53;
+    border: 1px solid #ede6da;
+}
+.btn-act-detail:hover {
+    background-color: #ede6da;
+    color: #6e5d36;
+}
+
+.btn-act-terima {
+    background-color: #a38a53;
+    color: #ffffff;
+}
+.btn-act-terima:hover {
+    background-color: #8c7643;
+}
+
+.btn-act-tolak {
+    background-color: #fdf3f2;
+    color: #b33939;
+    border: 1px solid #fbd9d6;
+}
+.btn-act-tolak:hover {
+    background-color: #fbcaca;
+}
+
+/* --- TATA LETAK GRID DASHBOARD ADMIN UTAMA --- */
+.dashboard-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/* KOTAK KARTU MENU DASHBOARD */
+.dashboard-menu-card {
+    background-color: #ffffff;
+    border: 1px solid #ede6da;
+    border-radius: 8px;
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(163, 138, 83, 0.05);
+}
+
+.dashboard-menu-card:hover {
+    transform: translateY(-4px);
+    border-color: #a38a53;
+    box-shadow: 0 8px 15px rgba(163, 138, 83, 0.12);
+}
+
+/* WADAH IKON MENU */
+.card-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background-color: #fbf9f5;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    border: 1px solid #ede6da;
+    transition: all 0.3s ease;
+}
+
+.card-icon-wrapper i {
+    font-size: 1.5rem;
+    color: #a38a53;
+}
+
+.dashboard-menu-card:hover .card-icon-wrapper {
+    background-color: #a38a53;
+}
+
+.dashboard-menu-card:hover .card-icon-wrapper i {
+    color: #ffffff;
+}
+
+/* TEXT CARD STYLE */
+.dashboard-menu-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2b2520;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dashboard-menu-card p {
+    font-size: 1rem;
+    color: #7a7167;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    flex-grow: 1; /* Dorong link aksi ke bagian paling bawah kartu */
+}
+
+/* LINK AKSI KECIL */
+.card-action-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #a38a53;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+    transition: gap 0.2s;
+}
+
+.dashboard-menu-card:hover .card-action-link {
+    color: #735f32;
+    gap: 10px;
+}
+
+.admin-logout-top {
+    color: #443e38;
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.admin-logout-top:hover {
+    color: #c62828;
 }
 
 /* =========================
    DASHBOARD MANAJER
 ========================= */
 
-.manager-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#c9c5a7;
+.manager-card-premium {
+    border-left: 5px solid #8c7643 !important; /* Aksen emas vertikal di sisi kiri kartu */
+    margin: 20px auto;
 }
 
-.manager-wrapper{
-    margin:0;
-    min-height:100vh;
+.manager-card-premium:hover {
+    border-color: #735f32 !important;
+    box-shadow: 0 10px 20px rgba(140, 118, 67, 0.15) !important;
 }
-
-.manager-header{
-    background:#ffffff;
-
-    height:70px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 35px;
-
-    border-bottom:1px solid #ddd;
-}
-
-.manager-title{
-    font-size:22px;
-    color:#555;
-}
-
-.manager-menu{
-    display:flex;
-    gap:30px;
-}
-
-.manager-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.manager-menu a:hover{
-    color:#99956c;
-}
-
-.manager-content{
-    background:#f7f7f5;
-
-    width:90%;
-    height:700px;
-
-    margin:20px auto;
-
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-
-    padding-top:60px;
-}
-
-.manager-btn{
-    background:#8a8561;
-
-    color:white;
-
-    text-decoration:none;
-
-    width:150px;
-    height:55px;
-
-    border-radius:15px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:22px;
-
-    box-shadow:0 4px 5px rgba(0,0,0,.3);
-
-    transition:.3s;
-}
-
-.manager-btn:hover{
-    background:#726d4e;
-}
-
 /* =========================
    PENILAIAN MANAJER
 ========================= */
@@ -688,1427 +805,101 @@ body {
     font-size:18px;
 }
 
-/* =====================
-   HALAMAN PENILAIAN
-===================== */
-
-.departemen-container{
-    width:90%;
-    margin:30px auto;
-}
-
-.judul-halaman{
-    color:#5b3a29;
-    margin:20px 0 30px;
-    font-size:38px;
-}
-
-.departemen-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
-}
-
-.departemen-card{
-    background:#b0a56d;
-    color:rgb(0, 0, 0);
-    text-decoration:none;
-    border-radius:15px;
-    padding:35px 20px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    transition:0.3s;
-}
-
-.departemen-card:hover{
-    transform:translateY(-5px);
-}
-
-.departemen-card h3{
-    margin:0;
-    font-size:24px;
-    font-weight:600;
-}
-
-.back-text{
-    text-decoration:none;
-    color:#5b3a29;
-    font-size:22px;
-    font-weight:600;
-}
-
-/* =========================
-   ACCOUNTING
-========================= */
-
-.search-box{
-    display:flex;
-
-    gap:10px;
-
-    margin-bottom:25px;
-}
-
-.search-input{
-    width:350px;
-
-    height:45px;
-
-    padding:0 15px;
-
-    border:1px solid #ccc;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    font-family:'Barlow Condensed', sans-serif;
-}
-
-.search-btn{
-    background:#817a55;
-
-    color:white;
-
-    border:none;
-
-    padding:0 25px;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    cursor:pointer;
-}
-
-.search-btn:hover{
-    background:#6f6949;
-}
-
-.accounting-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.accounting-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.accounting-user{
-    font-size:22px;
-    color:#555;
-}
-
-.accounting-menu{
-    display:flex;
-    gap:30px;
-}
-
-.accounting-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.accounting-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.departemen-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-/* =========================
-   ENGINEERING
-========================= */
-.search-box{
-    display:flex;
-
-    gap:10px;
-
-    margin-bottom:25px;
-}
-
-.search-input{
-    width:350px;
-
-    height:45px;
-
-    padding:0 15px;
-
-    border:1px solid #ccc;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    font-family:'Barlow Condensed', sans-serif;
-}
-
-.search-btn{
-    background:#817a55;
-
-    color:white;
-
-    border:none;
-
-    padding:0 25px;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    cursor:pointer;
-}
-
-.search-btn:hover{
-    background:#6f6949;
-}
-.engineering-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.engineering-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.engineering-user{
-    font-size:22px;
-    color:#555;
-}
-
-.engineering-menu{
-    display:flex;
-    gap:30px;
-}
-
-.engineering-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.engineering-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.departemen-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-.engineering-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.engineering-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.engineering-user{
-    font-size:22px;
-    color:#555;
-}
-
-.engineering-menu{
-    display:flex;
-    gap:30px;
-}
-
-.engineering-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.engineering-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.departemen-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-/* =====================
-   FBP
-===================== */
-.search-box{
-    display:flex;
-
-    gap:10px;
-
-    margin-bottom:25px;
-}
-
-.search-input{
-    width:350px;
-
-    height:45px;
-
-    padding:0 15px;
-
-    border:1px solid #ccc;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    font-family:'Barlow Condensed', sans-serif;
-}
-
-.search-btn{
-    background:#817a55;
-
-    color:white;
-
-    border:none;
-
-    padding:0 25px;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    cursor:pointer;
-}
-
-.search-btn:hover{
-    background:#6f6949;
-}
-.fbp-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.fbp-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.fbp-user{
-    font-size:22px;
-    color:#555;
-}
-
-.fbp-menu{
-    display:flex;
-    gap:30px;
-}
-
-.fbp-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.fbp-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.departemen-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-.fbp-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.fbp-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.fbp-user{
-    font-size:22px;
-    color:#555;
-}
-
-.fbp-menu{
-    display:flex;
-    gap:30px;
-}
-
-.fbp-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.fbp-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.fbp-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-/* =====================
-   FBS
-===================== */
-.search-box{
-    display:flex;
-
-    gap:10px;
-
-    margin-bottom:25px;
-}
-
-.search-input{
-    width:350px;
-
-    height:45px;
-
-    padding:0 15px;
-
-    border:1px solid #ccc;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    font-family:'Barlow Condensed', sans-serif;
-}
-
-.search-btn{
-    background:#817a55;
-
-    color:white;
-
-    border:none;
-
-    padding:0 25px;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    cursor:pointer;
-}
-
-.search-btn:hover{
-    background:#6f6949;
-}
-.fbs-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.fbs-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.fbs-user{
-    font-size:22px;
-    color:#555;
-}
-
-.fbs-menu{
-    display:flex;
-    gap:30px;
-}
-
-.fbs-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.fbs-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.departemen-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-.fbs-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.fbs-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.fbs-user{
-    font-size:22px;
-    color:#555;
-}
-
-.fbs-menu{
-    display:flex;
-    gap:30px;
-}
-
-.fbs-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.fbs-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.fbs-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-/* =====================
-   FO
-===================== */
-.search-box{
-    display:flex;
-
-    gap:10px;
-
-    margin-bottom:25px;
-}
-
-.search-input{
-    width:350px;
-
-    height:45px;
-
-    padding:0 15px;
-
-    border:1px solid #ccc;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    font-family:'Barlow Condensed', sans-serif;
-}
-
-.search-btn{
-    background:#817a55;
-
-    color:white;
-
-    border:none;
-
-    padding:0 25px;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    cursor:pointer;
-}
-
-.search-btn:hover{
-    background:#6f6949;
-}
-.fo-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.fo-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.fo-user{
-    font-size:22px;
-    color:#555;
-}
-
-.fo-menu{
-    display:flex;
-    gap:30px;
-}
-
-.fo-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.fo-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.departemen-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-.fo-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.fo-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.fo-user{
-    font-size:22px;
-    color:#555;
-}
-
-.fo-menu{
-    display:flex;
-    gap:30px;
-}
-
-.fo-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.fo-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.fo-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-/* =====================
-   HOUSE KEEPING
-===================== */
-.search-box{
-    display:flex;
-
-    gap:10px;
-
-    margin-bottom:25px;
-}
-
-.search-input{
-    width:350px;
-
-    height:45px;
-
-    padding:0 15px;
-
-    border:1px solid #ccc;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    font-family:'Barlow Condensed', sans-serif;
-}
-
-.search-btn{
-    background:#817a55;
-
-    color:white;
-
-    border:none;
-
-    padding:0 25px;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    cursor:pointer;
-}
-
-.search-btn:hover{
-    background:#6f6949;
-}
-.hk-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.hk-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.hk-user{
-    font-size:22px;
-    color:#555;
-}
-
-.hk-menu{
-    display:flex;
-    gap:30px;
-}
-
-.hk-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.hk-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.departemen-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-.hk-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.hk-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.hk-user{
-    font-size:22px;
-    color:#555;
-}
-
-.hk-menu{
-    display:flex;
-    gap:30px;
-}
-
-.hk-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.hk-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.hk-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-/* =====================
-   SALES MARKETING
-===================== */
-.search-box{
-    display:flex;
-
-    gap:10px;
-
-    margin-bottom:25px;
-}
-
-.search-input{
-    width:350px;
-
-    height:45px;
-
-    padding:0 15px;
-
-    border:1px solid #ccc;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    font-family:'Barlow Condensed', sans-serif;
-}
-
-.search-btn{
-    background:#817a55;
-
-    color:white;
-
-    border:none;
-
-    padding:0 25px;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    cursor:pointer;
-}
-
-.search-btn:hover{
-    background:#6f6949;
-}
-.sm-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.sm-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.sm-user{
-    font-size:22px;
-    color:#555;
-}
-
-.sm-menu{
-    display:flex;
-    gap:30px;
-}
-
-.sm-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.sm-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.departemen-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-.sm-body{
-    margin:0;
-    padding:0;
-
-    font-family:'Barlow Condensed', sans-serif;
-
-    background:#d8d5b8;
-}
-
-.sm-header{
-    background:white;
-
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 20px;
-}
-
-.sm-user{
-    font-size:22px;
-    color:#555;
-}
-
-.sm-menu{
-    display:flex;
-    gap:30px;
-}
-
-.sm-menu a{
-    text-decoration:none;
-    color:#444;
-    font-size:18px;
-}
-
-.sm-content{
-    background:#f8f8f8;
-
-    width:95%;
-
-    min-height:700px;
-
-    margin:20px auto;
-
-    padding:15px;
-}
-
-.sm-title{
-    color:#999;
-    font-size:28px;
-
-    margin-bottom:10px;
-}
-
-.trainee-card{
-    background:#c8c4a5;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 3px 5px rgba(0,0,0,.3);
-}
-
-.trainee-card h3{
-    margin:0;
-    color:white;
-}
-
-.trainee-card p{
-    margin-top:5px;
-    color:white;
-}
-
-/* signup peserta*/
-.tab-menu{
-    display:flex;
-    justify-content:center;
-    gap:60px;
-    margin-bottom:25px;
-}
-
-.tab-menu a,
-.tab-menu span{
-    text-decoration:none;
-    font-size:34px;
-    color:#a89d6b;
-    font-weight:600;
-}
-
-.active-tab{
-    border-bottom:3px solid #8b845f;
-    padding-bottom:5px;
-    color:#6f6a4f !important;
-}
-/*edit peserta*/
-.btn-edit{
+/* --- CSS KHUSUS HALAMAN PENILAIAN --- */
+.score-main-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2b2520;
+    line-height: 1;
+}
+
+.rating-sub-badge {
     display: inline-block;
-    padding: 8px 16px;
-    background-color: #8B5E3C;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #8c7643;
     font-weight: 600;
-    transition: 0.3s;
+    background-color: #fbf9f5;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-top: 3px;
+    border: 1px solid #ede6da;
 }
 
-.btn-edit:hover{
-    background-color: #6F4A2D;
+/* --- BADGES STATUS DOKUMEN --- */
+.badge-status-doc {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+.doc-success {
+    background-color: #eaf5ea;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.doc-danger {
+    background-color: #fdf2f2;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+/* --- TATA LETAK BUTTON GRID JURUSAN ADMIN --- */
+.admin-action-grid-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    align-items: center;
+}
+
+.admin-action-grid-buttons .admin-act-btn {
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Variasi Warna Tombol Administrasi Baru */
+.btn-act-warning {
+    background-color: #fdfaf2;
+    color: #a38a53;
+    border: 1px solid #e3d7bf;
+}
+.btn-act-warning:hover {
+    background-color: #f0ebd9;
+    color: #735f32;
+}
+
+.btn-act-success {
+    background-color: #eaf5ea;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+.btn-act-success:hover {
+    background-color: #c8e6c9;
+}
+
+.btn-act-primary-submit {
+    background-color: #a38a53;
+    color: #ffffff;
+    grid-column: span 2; /* Tombol selesai membentang penuh di bawah */
+}
+.btn-act-primary-submit:hover {
+    background-color: #8c7643;
+}
+/* --- BUTTON DISABLED SPESIFIK PANEL MANAJER --- */
+.btn-manager-disabled {
+    background-color: #f1f0ec !important;
+    color: #a19c95 !important;
+    border: 1px solid #dbd9d3 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none !important;
 }
 /* =====================
    LOGIN PESERTA
@@ -2505,6 +1296,7 @@ body {
     background:#817a55;
     color:white;
 }
+
 /* --- MENU UTAMA & HEADER HOME --- */
 .home-header {
     background-color: #ffffff;
@@ -3281,6 +2073,13 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Tombol hapus khusus halaman histori agar presisi di dalam tabel */
+.btn-block-delete {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 6px 12px;
+}
 /* =========================
    HALAMAN DEPARTEMEN ADMIN
 ========================= */
@@ -3321,79 +2120,379 @@ body {
     gap: 10px;
     margin-top: 10px;
 }
-/* =========================
-   detail pendaftaran
-========================= */
-.btn-detail{
-    background: #3498db;
-    color: white;
-    text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 6px;
-    display: inline-block;
-}
-.btn-hapus{
-    background: #dc3545;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.btn-selesai{
-    display:inline-block;
-    margin-top:10px;
-    padding:8px 15px;
-    background:#6c757d;
-    color:white;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:600;
-    transition:0.3s;
+/* --- FIXING SYSTEM DETAIL PENDAFTAR --- */
+
+/* Tata Letak Utama Kolom Kiri & Kanan */
+.detail-main-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 20px;
 }
 
-.btn-selesai:hover{
-    background:#495057;
-}
-.btn-hapus{
-    display:inline-block;
-    margin-top:10px;
-    padding:8px 16px;
-    background:#dc3545;
-    color:white;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.btn-hapus:hover{
-    background:#b02a37;
-}
-.histori-pendaftar-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #6f6949;
-    color: white;
-    text-decoration: none;
+.detail-info-card {
+    flex: 2;
+    background: #ffffff;
+    border: 1px solid #ede6da;
     border-radius: 8px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 18px;
+    padding: 24px;
+}
+
+.detail-sidebar-card {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #ede6da;
+    border-radius: 8px;
+    padding: 24px;
+    min-width: 300px;
+}
+
+.card-section-title {
+    font-size: 1.2rem;
     font-weight: 600;
-    transition: 0.3s;
+    color: #2b2520;
+    border-bottom: 2px solid #ede6da;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* FIXING 1: Menjadikan Tanda Titik Dua Sejajar Sempurna */
+.biodata-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.bio-row {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.bio-label {
+    width: 200px; /* Mengunci lebar kolom teks label kiri */
+    color: #7a7167;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.bio-semicolon {
+    width: 20px; /* Menjaga titik dua berjarak rapi */
+    color: #2b2520;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.bio-value {
+    color: #2b2520;
+    flex-grow: 1;
+    word-break: break-word; /* Menghindari kebocoran teks panjang */
+}
+
+.highlight-text {
+    color: #8c7643;
+    font-weight: 600;
+}
+
+.badge-status-waiting {
+    background-color: #fff9db;
+    color: #f59f00;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1px solid #ffe3e3;
+    letter-spacing: 0.5px;
+}
+
+/* FIXING 2: Mengamankan Ukuran Pas Foto Peserta Supaya Tidak Meluber */
+.photo-preview-box {
+    width: 100%;
+    max-width: 220px; /* Membatasi lebar pas foto */
+    margin: 0 auto;
+    border: 1px solid #ede6da;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fbf9f5;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.img-pendaftar-responsive {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* FIXING 3: Memberikan Spacing/Jarak pada Tombol Download Berkas */
+.document-action-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Memberi jeda jarak vertikal antar tombol */
+}
+
+.btn-download-attachment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn-cv {
+    background-color: #8c7643;
+    color: #ffffff;
+    border: 1px solid #735f32;
+}
+
+.btn-cv:hover {
+    background-color: #735f32;
+}
+
+.btn-surat {
+    background-color: #fbf9f5;
+    color: #8c7643;
+    border: 1px solid #e3d9bd;
+}
+
+.btn-surat:hover {
+    background-color: #f7f4eb;
+}
+
+/* Penyesuaian saat dibuka di Mobile / Layar Sempit */
+@media (max-width: 820px) {
+    .detail-main-layout {
+        flex-direction: column;
+    }
+    .detail-sidebar-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .bio-label {
+        width: 140px;
+    }
+}
+/* --- HEADER NAV ADMIN --- */
+.admin-header-nav {
+    background-color: #ffffff;
+    border-bottom: 2px solid #f3ece2;
+    padding: 15px 20px;
+}
+
+.admin-nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-user {
+    font-weight: 600;
+    color: #a38a53;
+    font-size: 0.95rem;
+}
+
+.header-menu-admin {
+    display: flex;
+    gap: 20px;
+}
+
+.header-menu-admin a {
+    text-decoration: none;
+    color: #5c534c;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.header-menu-admin a:hover {
+    color: #a38a53;
+}
+
+.admin-logout-link {
+    color: #b33939 !important;
+}
+
+/* --- BAR PENCARIAN --- */
+.admin-action-bar {
+    margin-bottom: 20px;
+}
+
+.search-form-admin {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+}
+
+.search-box-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.search-box-wrapper i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a38a53;
+    font-size: 0.9rem;
+}
+
+.search-input-admin {
+    width: 100%;
+    padding: 10px 12px 10px 38px;
+    border: 1px solid #e1d7c6;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: #443e38;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.search-input-admin:focus {
+    border-color: #a38a53;
+}
+
+.search-btn-admin {
+    background-color: #a38a53; /* Tombol Coklat Ambarrukmo */
+    color: #ffffff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-btn-admin:hover {
+    background-color: #8c7643;
+}
+
+/* --- TABEL DATA UTAMA --- */
+.admin-table-card {
+    background: #ffffff;
+    border: 1px solid #ede6da;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(163, 138, 83, 0.03);
+    overflow: hidden;
+}
+
+.admin-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-data-table th {
+    background-color: #fbf9f5; /* Background bar header tabel krem lembut */
+    color: #6e5d36; /* Teks header coklat */
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 14px 18px;
+    border-bottom: 2px solid #ede6da;
+    text-align: left;
+}
+
+.admin-data-table td {
+    padding: 16px 18px;
+    font-size: 0.9rem;
+    color: #443e38;
+    border-bottom: 1px solid #f8f3eb;
+    vertical-align: middle;
+}
+
+.admin-data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.td-primary-name {
+    font-weight: 600;
+    color: #2b2520;
+}
+
+.admin-highlight-dept {
+    font-weight: 600;
+    color: #a38a53;
+}
+
+/* --- BADGES STATUS --- */
+.admin-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.badge-success { background: #f0ebd9; color: #735f32; border: 1px solid #e3d9bd; } /* Nuansa terima emas hangat */
+.badge-warning { background: #fdfaf2; color: #a38a53; border: 1px solid #f3ece2; } /* Menunggu */
+.badge-danger  { background: #fdf3f2; color: #b33939; } /* Tolak */
+
+/* --- TOMBOL AKSI GROUP --- */
+.admin-action-group {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-act-btn {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     border: none;
     cursor: pointer;
+    transition: all 0.15s ease;
 }
 
-.histori-pendaftar-btn:hover {
-    background-color: #6f6949;
-    transform: translateY(-2px);
+.btn-act-detail {
+    background-color: #fbf9f5;
+    color: #a38a53;
+    border: 1px solid #ede6da;
+}
+.btn-act-detail:hover {
+    background-color: #ede6da;
+    color: #6e5d36;
 }
 
-.histori-pendaftar-btn:active {
-    transform: translateY(0);
+.btn-act-terima {
+    background-color: #a38a53;
+    color: #ffffff;
+}
+.btn-act-terima:hover {
+    background-color: #8c7643;
+}
+
+.btn-act-tolak {
+    background-color: #fdf3f2;
+    color: #b33939;
+    border: 1px solid #fbd9d6;
+}
+.btn-act-tolak:hover {
+    background-color: #fbcaca;
 }
 /* ===========================
    FORM PENILAIAN
@@ -3956,6 +3055,197 @@ body {
     color: #333;
     font-weight: 600;
 }
+/* --- HEADER NAV ADMIN --- */
+.admin-header-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 15px 0;
+    margin-bottom: 10px;
+}
+
+.admin-nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-user {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.header-menu-admin {
+    display: flex;
+    gap: 20px;
+}
+
+.header-menu-admin a {
+    text-decoration: none;
+    color: #475569;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.header-menu-admin a:hover {
+    color: #0f172a;
+}
+
+.admin-logout-link {
+    color: #ef4444 !important;
+}
+
+/* --- BAR PENCARIAN MINIMALIS --- */
+.admin-action-bar {
+    margin-bottom: 20px;
+}
+
+.search-form-admin {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+}
+
+.search-box-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.search-box-wrapper i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.search-input-admin {
+    width: 100%;
+    padding: 10px 12px 10px 38px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: #334155;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.search-input-admin:focus {
+    border-color: #94a3b8;
+}
+
+.search-btn-admin {
+    background-color: #475569;
+    color: #ffffff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-btn-admin:hover {
+    background-color: #1e293b;
+}
+
+/* --- TABEL DATA UTAMA --- */
+.admin-table-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.admin-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-data-table th {
+    background-color: #f8fafc;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 14px 18px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.admin-data-table td {
+    padding: 16px 18px;
+    font-size: 0.9rem;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.admin-data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.td-primary-name {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* --- TOMBOL AKSI GROUP --- */
+.admin-action-group {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-act-btn {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-act-detail {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+}
+.btn-act-detail:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+
+.btn-act-terima {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+.btn-act-terima:hover {
+    background-color: #bbf7d0;
+}
+
+.btn-act-tolak {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+.btn-act-tolak:hover {
+    background-color: #fecaca;
+}
 /* ==========================
    EDIT PESERTA MAGANG
 ========================== */
@@ -4031,97 +3321,71 @@ body {
 .btn-kembali:hover{
     color: #483c15;
 }
-/* =========================
-   HALAMAN DEPARTEMEN ADMIN
-========================= */
-
-.departemen-wrapper {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
+/* --- COMPONENT INPUT DI DALAM TABEL DEPARTEMEN --- */
+.admin-input-group-table {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e1d7c6;
+    border-radius: 4px;
+    padding-right: 8px;
+    max-width: 120px;
 }
 
-.departemen-wrapper h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #5b3a29;
-    font-size: 38px;
-}
-
-/* Card Departemen */
-
-.departemen-card {
-    background: #f8f1e7;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.departemen-card h3 {
-    color: #5b3a29;
-    margin-bottom: 15px;
-    font-size: 28px;
-}
-
-.departemen-card label {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #444;
-}
-
-.departemen-card input,
-.departemen-card select {
+.table-form-input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #d8c3a5;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: 'Barlow Condensed', sans-serif;
-}
-
-.departemen-card p {
-    margin-top: 15px;
-    font-size: 18px;
-    color: #333;
-}
-
-/* Tombol Simpan */
-
-.departemen-card button {
-    margin-top: 15px;
-    background: #8b5e3c;
-    color: white;
     border: none;
-    padding: 10px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
+    background: transparent;
+    padding: 8px 10px;
     font-family: 'Barlow Condensed', sans-serif;
-    transition: 0.3s;
-}
-
-.departemen-card button:hover {
-    background: #6f472d;
-}
-
-/* Tombol kembali */
-
-.back-text {
-    margin-left: 40px;
-    display: inline-block;
-    color: #5b3a29;
-    text-decoration: none;
-    font-size: 20px;
+    font-size: 1.1rem;
+    color: #443e38;
     font-weight: 600;
+    outline: none;
+    text-align: center;
 }
 
-.back-text:hover {
-    text-decoration: underline;
+.input-unit-label {
+    font-size: 0.9rem;
+    color: #a38a53;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
+/* --- DROPDOWN SELECT DI DALAM TABEL --- */
+.table-select-wrapper {
+    position: relative;
+    max-width: 180px;
+}
+
+.table-form-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #e1d7c6;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #443e38;
+    background-color: #ffffff;
+    outline: none;
+    cursor: pointer;
+}
+
+.select-status-available {
+    border-left: 4px solid #2e7d32;
+}
+
+.select-status-full {
+    border-left: 4px solid #c62828;
+}
+
+/* Tombol simpan lebar penuh untuk kolom aksi */
+.btn-block-submit {
+    width: 100%;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(163, 138, 83, 0.2);
+}
 /* =====================
    SIGNATURE SECTION
 ===================== */

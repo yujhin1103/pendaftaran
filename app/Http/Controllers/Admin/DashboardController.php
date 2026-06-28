@@ -365,4 +365,25 @@ public function selesaiPenilaian($id)
     return redirect('/admin/penilaian')
         ->with('success', 'Penilaian berhasil diselesaikan.');
 }
+public function hapusAlumni($id)
+{
+    $peserta = Pendaftaran::findOrFail($id);
+
+    if ($peserta->foto) {
+        Storage::disk('public')->delete($peserta->foto);
+    }
+
+    if ($peserta->cv) {
+        Storage::disk('public')->delete($peserta->cv);
+    }
+
+    if ($peserta->surat_izin) {
+        Storage::disk('public')->delete($peserta->surat_izin);
+    }
+
+    $peserta->delete();
+
+    return redirect('/admin/histori-peserta')
+        ->with('success', 'Data alumni berhasil dihapus');
+}
 }

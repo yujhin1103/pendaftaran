@@ -149,8 +149,13 @@ Route::post(
     '/admin/penilaian/{id}/upload',
     [DashboardController::class, 'simpanDokumenPenilaian']
 );
+Route::post(
+    '/admin/histori-peserta/hapus/{id}',
+    [AdminDashboardController::class, 'hapusAlumni']
+);
 // ================= PESERTA =================
-
+// Ubah dari 'prosesPendaftaran' menjadi 'store'
+Route::post('/peserta/pendaftaran/proses', [PendaftaranController::class, 'store']);
 Route::prefix('peserta')->group(function () {
 
     Route::get('/dashboard', [PesertaDashboardController::class, 'index']);

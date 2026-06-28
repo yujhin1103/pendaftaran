@@ -37,8 +37,8 @@
                 <a href="/peserta/home" class="menu-item"><i class="fa-solid fa-house"></i> Home</a>
                 <a href="/peserta/departemen" class="menu-item active"><i class="fa-solid fa-hotel"></i> Department</a>
                 <a href="/peserta/pendaftaran" class="menu-item"><i class="fa-solid fa-file-signature"></i> Register</a>
-                <a href="/peserta/penilaian" class="menu-item"><i class="fa-solid fa-star-half-stroke"></i> Penilaian</a>
                 <a href="/peserta/profile" class="menu-item"><i class="fa-solid fa-user-gear"></i> Profile</a>
+                <a href="/peserta/penilaian" class="menu-item"><i class="fa-solid fa-star-half-stroke"></i> Penilaian</a>
                 <a href="#" onclick="logoutConfirm()" class="menu-item btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
             </nav>
         </div>
