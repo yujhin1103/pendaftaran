@@ -77,8 +77,8 @@
                 <ul class="custom-list">
                     <li>
                         <i class="fa-solid fa-circle-check"></i>
-                        <strong>Pembuatan Akun</strong>
-                        Peserta magang wajib membuat akun terlebih dahulu sebelum melakukan pendaftaran resmi.
+                        <strong>Pendaftaran Peserta</strong>
+                        Peserta magang wajib mendaftar sebanyak satu kali saja, bila tidak diterima maka boleh mendaftar kembali.
                     </li>
                     <li>
                         <i class="fa-solid fa-circle-check"></i>
